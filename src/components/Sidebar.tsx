@@ -9,23 +9,21 @@ import settings from '../assets/setting-2.svg';
 interface SidebarItemProps {
   icon: string;
   label: string;
-  isExpanded: boolean;
   active?: boolean;
 }
 
 const SidebarItem: React.FC<SidebarItemProps> = ({
   icon,
   label,
-  isExpanded,
   active = false,
 }) => {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
     <div
-      className={`flex items-center px-4 py-3 pb-2 ${
-        active ? 'bg-blue-600 text-white' : 'hover:bg-[#f5f5f7]'
-      } cursor-pointer rounded-lg px-2`}
+      className={`flex items-center px-2 py-3 pb-2 ${
+        active ? 'bg-blue-600 text-white' : 'hover:bg-[#f5f5f7] w-full'
+      } cursor-pointer rounded-lg`}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
@@ -34,14 +32,12 @@ const SidebarItem: React.FC<SidebarItemProps> = ({
           src={icon}
           alt={label}
           className={`transition-colors duration-300 ${
-            isHovered ? 'filter invert' : ''
+            isHovered ? 'filter brightness-0' : ''
           }`}
         />
       </div>
       <span
-        className={`pl-2 transition-all duration-300 ${
-          isExpanded ? 'opacity-100 w-auto' : 'opacity-0 w-0'
-        } overflow-hidden whitespace-nowrap ${
+        className={`sidebar-label pl-2 transition-colors duration-300 ${
           isHovered ? 'text-[#141522]' : 'text-[#8E92BC]'
         }`}
       >
@@ -52,50 +48,25 @@ const SidebarItem: React.FC<SidebarItemProps> = ({
 };
 
 const CollapsibleSidebar: React.FC = () => {
-  const [isExpanded, setIsExpanded] = useState<boolean>(false);
-
   return (
     <div className="flex h-screen">
-      <div
-        className={`transition-all duration-300 ease-in-out bg-[#FFFFFF] text-black h-full ${
-          isExpanded ? 'w-64' : 'w-16'
-        }`}
-        onMouseEnter={() => setIsExpanded(true)}
-        onMouseLeave={() => setIsExpanded(false)}
-      >
-        <div className="p-4">
-          <div className="flex ">
-            <span
-              className={`transition-opacity ${
-                isExpanded ? 'opacity-100' : 'opacity-0'
-              } overflow-hidden whitespace-nowrap`}
-            >
-              <div className="flex flex-row content-start gap-3">
-                <img src={logo} className="w-[40px] h-[40px]" />
-                <h2 className="text-[32px]">DNX</h2>
-              </div>
-            </span>
-            <span
-              className={`transition-opacity ${
-                !isExpanded ? 'opacity-100' : 'opacity-0'
-              } absolute`}
-            >
-              <img src={logo} />
-            </span>
+      <div className="w-[252px] flex flex-col gap-6 bg-[#FFFFFF] text-black h-full">
+        <div className="p-3">
+          <div className="flex flex-row gap-3 items-center pl-4">
+            <img src={logo} className="w-[40px] h-[40px]" />
+            <h2 className="text-[32px] font-semibold">DNX</h2>
           </div>
         </div>
 
-        <nav className="pt-8">
-          <SidebarItem icon={overview} label="Overview" isExpanded={isExpanded} />
-          <SidebarItem icon={task} label="Task" isExpanded={isExpanded} />
-          <SidebarItem
-            icon={mentor}
-            label="Mentors"
-            isExpanded={isExpanded}
-          />
-          <SidebarItem icon={message} label="Message" isExpanded={isExpanded} />
-          <SidebarItem icon={settings} label="Settings" isExpanded={isExpanded} />
-        </nav>
+        <div className="flex justify-center">
+          <nav className="flex flex-col gap-[24px] w-[75%] items-start">
+            <SidebarItem icon={overview} label="Overview" />
+            <SidebarItem icon={task} label="Task" />
+            <SidebarItem icon={mentor} label="Mentors" />
+            <SidebarItem icon={message} label="Message" />
+            <SidebarItem icon={settings} label="Settings" />
+          </nav>
+        </div>
       </div>
     </div>
   );
