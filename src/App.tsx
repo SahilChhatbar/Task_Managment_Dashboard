@@ -1,11 +1,9 @@
 import './App.css';
-import Sidebar from './components/Sidebar';
-
+import Layout from './components/Layout';
 function App() {
   return (
-    <><div className='bg-[#fafafa]'>
-    <Sidebar/>
-    </div>
+    <>
+    <Layout children={undefined}/>
     </>
   );
 }
