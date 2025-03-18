@@ -7,8 +7,8 @@ interface ProfileCardProps {
   designation: string;
   tasks: number;
   reviews: {
-    rating: number;
-    count: number;
+  rating: number;
+  count: number;
   };
   avatarUrl: string;
 }
@@ -36,12 +36,16 @@ const MentorCard: React.FC<ProfileCardProps> = ({
             className="w-12 h-12 rounded-full object-cover"
           />
           <div>
-            <h3 className="jakarta font-semibold text-base text-[#141522]">{name}</h3>
+            <h3 className="jakarta font-semibold text-base text-[#141522]">
+              {name}
+            </h3>
             <p className="jakarta text-xs text-[#54577A]">{designation}</p>
           </div>
         </div>
         <button
-          className={`cursor-pointer text-sm font-medium ${isFollowing ? "jakarta text-[#54577A]" : "jakarta text-[#546FFF]"}`}
+          className={`cursor-pointer text-sm font-medium ${
+            isFollowing ? "jakarta text-[#54577A]" : "jakarta text-[#546FFF]"
+          }`}
           onClick={handleFollowClick}
         >
           {isFollowing ? "Followed" : "+ Follow"}
@@ -51,7 +55,9 @@ const MentorCard: React.FC<ProfileCardProps> = ({
       <div className="flex items-center justify-around">
         <div className="flex items-center gap-2">
           <MdArticle className="text-2xl  text-[#54577A]" />
-          <span className="jakarta text-sm font-medium text-[#141522]">{tasks} Task</span>
+          <span className="jakarta text-sm font-medium text-[#141522]">
+            {tasks} Task
+          </span>
         </div>
 
         <div className="flex items-center ">

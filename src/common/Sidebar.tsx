@@ -5,7 +5,7 @@ import task from "../assets/book.svg";
 import mentor from "../assets/user-octagon.svg";
 import message from "../assets/message.svg";
 import settings from "../assets/setting-2.svg";
-import { MdClose } from 'react-icons/md';
+import { MdClose } from "react-icons/md";
 
 interface SidebarItemProps {
   icon: string;
@@ -72,9 +72,11 @@ const Sidebar: React.FC<SidebarProps> = ({ isSidebarOpen, toggleSidebar }) => {
             }`}
           >
             <img src={logo} className="w-[40px] h-[40px]" alt="DNX Logo" />
-            <h2 className="jakarta text-[32px] text-[#141522] font-semibold">DNX</h2>
+            <h2 className="jakarta text-[32px] text-[#141522] font-semibold">
+              DNX
+            </h2>
           </div>
-          <MdClose 
+          <MdClose
             className="w-[24px] h-[24px] cursor-pointer md:hidden"
             onClick={toggleSidebar}
           />

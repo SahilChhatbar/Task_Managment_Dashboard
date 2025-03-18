@@ -1,17 +1,14 @@
-import React, { useState, ReactNode } from "react";
-import Header from "./Header";
-import Sidebar from "./Sidebar";
-import DashboardContent from "./dashboard/DashboardContent";
+import { useState } from "react";
+import Header from "./common/Header";
+import Sidebar from "./common/Sidebar";
+import { Outlet } from "react-router-dom" 
 
-interface LayoutProps {
-  children: ReactNode;
-}
 
-const Layout: React.FC<LayoutProps> = () => {
+const Layout:any = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
 
   const toggleSidebar = () => {
-    setIsSidebarOpen(!isSidebarOpen);
+    setIsSidebarOpen(prev=>!prev);
   };
 
   return (
@@ -19,7 +16,7 @@ const Layout: React.FC<LayoutProps> = () => {
       <Sidebar isSidebarOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
       <div className="flex flex-col flex-grow">
         <Header isSidebarOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
-        <DashboardContent />
+        <Outlet/>
       </div>
     </div>
   );

@@ -9,7 +9,6 @@ const RunningTaskCard = () => {
             <div className="jakarta text-[32px] font-semibold">65</div>
           </div>
         </div>
-  
         <div className="flex justify-center items-center py-2">
           <div className="relative w-20 h-20 flex gap-3 p-3 flex-row justify-center items-center">
             <svg

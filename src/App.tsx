@@ -1,9 +1,9 @@
-import './App.css';
-import Layout from './components/Layout';
+import "./App.css";
+import {Router} from './routes'
 function App() {
   return (
     <>
-    <Layout children={undefined}/>
+     <Router/>
     </>
   );
 }

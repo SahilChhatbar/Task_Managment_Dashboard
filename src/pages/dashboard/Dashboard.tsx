@@ -1,7 +1,7 @@
 import { useState } from "react";
-import Activity from "./Activity";
-import MentorCard from "./MentorCard";
-import RunningTaskCard from "./RunningTaskCard";
+import Activity from "./components/Activity";
+import MentorCard from "./components/MentorCard";
+import RunningTaskCard from "./components/RunningTaskCard";
 import { MdChevronRight, MdChevronLeft } from "react-icons/md";
 import george from "../../assets/george.png";
 import licoln from "../../assets/lincoln.png";
