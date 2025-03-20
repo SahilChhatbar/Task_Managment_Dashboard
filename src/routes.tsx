@@ -1,19 +1,35 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import Dashboard from "./pages/dashboard/Dashboard";
-import Layout from "./Layout";
+import Dashboard from "./pages/dashboard/index";
+import Layout from "./layout/Layout";
+import Task from "./pages/task/index";
+import Mentor from "./pages/mentor/index";
+import Settings from "./pages/settings/index";
+import Messages from "./pages/messages/index";
 
 const router = createBrowserRouter([
   {
+    path: "/",
     element: <Layout />,
     children: [
       {
-        children: [
-          {
-            path: "/",
-            element: <Dashboard />,
-          },
-          
-        ],
+        index: true,
+        element: <Dashboard />,
+      },
+      {
+        path: "task",
+        element: <Task />,
+      },
+      {
+        path: "mentor",
+        element: <Mentor />,
+      },
+      {
+        path: "settings",
+        element: <Settings />,
+      },
+      {
+        path: "messages",
+        element: <Messages />,
       },
     ],
   },

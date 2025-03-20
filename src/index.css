@@ -1,14 +1,51 @@
 @import "tailwindcss";
-
-@plugin "tailwindcss-animate";
-
-@custom-variant dark (&:is(.dark *));
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+
+
 
 .sidebar-label{
  font-size: 14px;
  font-weight: 600;
  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+@media (max-width: 768px) {
+  html {
+    font-size: 14px;
+  }
+  
+  .p-4 {
+    padding: 0.75rem;
+  }
+  
+  .gap-4 {
+    gap: 0.75rem;
+  }
+  
+  .gap-8 {
+    gap: 1.25rem;
+  }
+  
+  .text-2xl {
+    font-size: 1.5rem;
+  }
+  
+  .text-lg {
+    font-size: 1rem;
+  }
+  
+  svg[cursor="pointer"] {
+    min-width: 24px;
+    min-height: 24px;
+    padding: 2px;
+  }
+  
+  .MentorCard, .TaskCard {
+    width: 100%;
+  }
+  
+  .welcome-section {
+    padding: 0.75rem 0;
+  }
 }
 
 :root {

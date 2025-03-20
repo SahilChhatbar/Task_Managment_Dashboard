@@ -1,16 +1,20 @@
 import React, { useState } from "react";
+import { useLocation, Link } from "react-router-dom";
+import { Button } from "@/components/ui/button";
+import { Card } from "@/components/ui/card";
+import { X } from "lucide-react";
 import logo from "../assets/book-square.svg";
 import overview from "../assets/category-2.svg";
 import task from "../assets/book.svg";
 import mentor from "../assets/user-octagon.svg";
 import message from "../assets/message.svg";
 import settings from "../assets/setting-2.svg";
-import { MdClose } from "react-icons/md";
 
 interface SidebarItemProps {
   icon: string;
   label: string;
   active?: boolean;
+  path: string;
 }
 
 interface SidebarProps {
@@ -22,13 +26,15 @@ const SidebarItem: React.FC<SidebarItemProps> = ({
   icon,
   label,
   active = false,
+  path,
 }) => {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
-    <div
+    <Link
+      to={path}
       className={`flex items-center px-2 py-3 pb-2 ${
-        active ? "bg-blue-600 text-white" : "hover:bg-[#f5f5f7]"
+        active ? "bg-[#F5F5F7] text-black" : "hover:bg-[#f5f5f7]"
       } w-full cursor-pointer rounded-lg`}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
@@ -38,22 +44,39 @@ const SidebarItem: React.FC<SidebarItemProps> = ({
           src={icon}
           alt={label}
           className={`transition-colors duration-100 ${
-            isHovered ? "filter brightness-0" : ""
+            active
+              ? "brightness-1"
+              : isHovered
+              ? "filter brightness-0"
+              : ""
           }`}
         />
       </div>
       <span
-        className={`sidebar-label pl-2 transition-colors duration-100 ${
-          isHovered ? "text-[#141522]" : "text-[#8E92BC]"
+        className={`pl-2 transition-colors duration-100 ${
+          active
+            ? "text-black font-medium"
+            : isHovered
+            ? "text-[#141522]"
+            : "text-[#8E92BC]"
         }`}
       >
         {label}
       </span>
-    </div>
+    </Link>
   );
 };
 
 const Sidebar: React.FC<SidebarProps> = ({ isSidebarOpen, toggleSidebar }) => {
+  const location = useLocation();
+  const currentPath = location.pathname;
+  const isActive = (path: string) => {
+    if (path === "/") {
+      return currentPath === path;
+    }
+    return currentPath === path || currentPath.startsWith(`${path}/`);
+  };
+
   return (
     <div
       className={`${
@@ -76,33 +99,55 @@ const Sidebar: React.FC<SidebarProps> = ({ isSidebarOpen, toggleSidebar }) => {
               DNX
             </h2>
           </div>
-          <MdClose
+          <X
             className="w-[24px] h-[24px] cursor-pointer md:hidden"
             onClick={toggleSidebar}
           />
         </div>
-
         <div className="flex flex-col flex-1 overflow-hidden">
           <div className="flex flex-col flex-1 justify-between">
             <div className="flex justify-center">
               <nav className="flex flex-col gap-6 w-[75%]">
-                <SidebarItem icon={overview} label="Overview" />
-                <SidebarItem icon={task} label="Task" />
-                <SidebarItem icon={mentor} label="Mentors" />
-                <SidebarItem icon={message} label="Message" />
-                <SidebarItem icon={settings} label="Settings" />
+                <SidebarItem
+                  icon={overview}
+                  label="Overview"
+                  active={isActive("/")}
+                  path="/"
+                />
+                <SidebarItem
+                  icon={task}
+                  label="Task"
+                  active={isActive("/task")}
+                  path="/task"
+                />
+                <SidebarItem
+                  icon={mentor}
+                  label="Mentors"
+                  active={isActive("/mentor")}
+                  path="/mentor"
+                />
+                <SidebarItem
+                  icon={message}
+                  label="Message"
+                  active={isActive("/messages")}
+                  path="/messages"
+                />
+                <SidebarItem
+                  icon={settings}
+                  label="Settings"
+                  active={isActive("/settings")}
+                  path="/settings"
+                />
               </nav>
             </div>
-
             <div className="p-3 flex justify-center">
-              <div className="bg-[#141522] text-white rounded-xl relative w-[188px] h-[248px] flex flex-col items-center">
-                <div className="bg-[#f5f5f5] rounded-full w-12 h-12 flex items-center justify-center translate-y-[-24px] shadow-4xl">
-                  <span className="text-2xl bg-[#141522] font-bold w-9 rounded-full text-white text-center text-[28px]">
+              <Card className="bg-[#141522] text-white rounded-xl relative w-[188px] h-[248px] flex flex-col items-center">
+                <div className="bg-[#f5f5f5] rounded-full w-12 h-12 flex items-center justify-center absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-6 shadow-lg">
+                  <span className="text-2xl bg-[#141522] font-bold w-9 h-9 rounded-full text-white flex items-center justify-center">
                     ?
                   </span>
                 </div>
-
-                <div className="text-center flex-1">
+                <div className="text-center flex-1 pt-8">
                   <h3 className="jakarta font-semibold text-base">
                     Help Center
                   </h3>
@@ -111,12 +156,12 @@ const Sidebar: React.FC<SidebarProps> = ({ isSidebarOpen, toggleSidebar }) => {
                     questions.
                   </p>
                 </div>
-                <div className="flex justify-center w-full pb-4">
-                  <button className="cursor-pointer jakarta font-semibold bg-white text-[#141522] w-[75%] py-2 rounded-lg text-xs">
+                <div className="flex justify-center w-full">
+                  <Button className="jakarta cursor-pointer font-semibold bg-white text-[#141522] w-[75%] py-2 rounded-lg text-xs hover:bg-white hover:opacity-90">
                     Go To Help Center
-                  </button>
+                  </Button>
                 </div>
-              </div>
+              </Card>
             </div>
           </div>
         </div>
