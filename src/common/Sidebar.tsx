@@ -4,11 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { X } from "lucide-react";
 import logo from "../assets/book-square.svg";
-import overview from "../assets/category-2.svg";
-import task from "../assets/book.svg";
-import mentor from "../assets/user-octagon.svg";
-import message from "../assets/message.svg";
-import settings from "../assets/setting-2.svg";
+import { SIDEBAR_NAV_ITEMS, HELP_CENTER_CONTENT } from "../constants"; // Import constants
 
 interface SidebarItemProps {
   icon: string;
@@ -16,12 +12,10 @@ interface SidebarItemProps {
   active?: boolean;
   path: string;
 }
-
 interface SidebarProps {
   isSidebarOpen: boolean;
   toggleSidebar: () => void;
 }
-
 const SidebarItem: React.FC<SidebarItemProps> = ({
   icon,
   label,
@@ -44,11 +38,7 @@ const SidebarItem: React.FC<SidebarItemProps> = ({
           src={icon}
           alt={label}
           className={`transition-colors duration-100 ${
-            active
-              ? "brightness-1"
-              : isHovered
-              ? "filter brightness-0"
-              : ""
+            active ? "brightness-1" : isHovered ? "filter brightness-0" : ""
           }`}
         />
       </div>
@@ -66,7 +56,6 @@ const SidebarItem: React.FC<SidebarItemProps> = ({
     </Link>
   );
 };
-
 const Sidebar: React.FC<SidebarProps> = ({ isSidebarOpen, toggleSidebar }) => {
   const location = useLocation();
   const currentPath = location.pathname;
@@ -76,7 +65,6 @@ const Sidebar: React.FC<SidebarProps> = ({ isSidebarOpen, toggleSidebar }) => {
     }
     return currentPath === path || currentPath.startsWith(`${path}/`);
   };
-
   return (
     <div
       className={`${
@@ -99,45 +87,28 @@ const Sidebar: React.FC<SidebarProps> = ({ isSidebarOpen, toggleSidebar }) => {
               DNX
             </h2>
           </div>
-          <X
+          <Button
+            variant="ghost"
+            size="icon"
             className="w-[24px] h-[24px] cursor-pointer md:hidden"
             onClick={toggleSidebar}
-          />
+          >
+            <X className="w-4 h-4" />
+          </Button>
         </div>
         <div className="flex flex-col flex-1 overflow-hidden">
           <div className="flex flex-col flex-1 justify-between">
             <div className="flex justify-center">
               <nav className="flex flex-col gap-6 w-[75%]">
-                <SidebarItem
-                  icon={overview}
-                  label="Overview"
-                  active={isActive("/")}
-                  path="/"
-                />
-                <SidebarItem
-                  icon={task}
-                  label="Task"
-                  active={isActive("/task")}
-                  path="/task"
-                />
-                <SidebarItem
-                  icon={mentor}
-                  label="Mentors"
-                  active={isActive("/mentor")}
-                  path="/mentor"
-                />
-                <SidebarItem
-                  icon={message}
-                  label="Message"
-                  active={isActive("/messages")}
-                  path="/messages"
-                />
-                <SidebarItem
-                  icon={settings}
-                  label="Settings"
-                  active={isActive("/settings")}
-                  path="/settings"
-                />
+                {SIDEBAR_NAV_ITEMS.map((item) => (
+                  <SidebarItem
+                    key={item.label}
+                    icon={item.icon}
+                    label={item.label}
+                    active={isActive(item.path)}
+                    path={item.path}
+                  />
+                ))}
               </nav>
             </div>
             <div className="p-3 flex justify-center">
@@ -149,16 +120,15 @@ const Sidebar: React.FC<SidebarProps> = ({ isSidebarOpen, toggleSidebar }) => {
                 </div>
                 <div className="text-center flex-1 pt-8">
                   <h3 className="jakarta font-semibold text-base">
-                    Help Center
+                    {HELP_CENTER_CONTENT.title}
                   </h3>
                   <p className="jakarta text-xs p-3">
-                    Having Trouble in Learning. Please contact us for more
-                    questions.
+                    {HELP_CENTER_CONTENT.description}
                   </p>
                 </div>
                 <div className="flex justify-center w-full">
                   <Button className="jakarta cursor-pointer font-semibold bg-white text-[#141522] w-[75%] py-2 rounded-lg text-xs hover:bg-white hover:opacity-90">
-                    Go To Help Center
+                    {HELP_CENTER_CONTENT.buttonText}
                   </Button>
                 </div>
               </Card>

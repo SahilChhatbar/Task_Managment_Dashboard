@@ -27,9 +27,7 @@ interface DataPoint {
   value: number;
   tasks?: number;
 }
-
 type CustomTooltipProps = TooltipProps<ValueType, NameType>;
-
 const Activity: React.FC = () => {
   const [timeRange, setTimeRange] = useState(timeRanges[0]);
   const CustomTooltip: React.FC<CustomTooltipProps> = ({
@@ -49,7 +47,6 @@ const Activity: React.FC = () => {
     }
     return null;
   };
-
   return (
     <Card className="p-4 w-full flex flex-col h-53.5 shadow-none border-none bg-[#F5F5F7] gap-4">
       <div className="flex justify-between items-center">

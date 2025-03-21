@@ -8,6 +8,46 @@ import antoine from "../src/assets/lincoln.png";
 import jessica from "../src/assets/lincoln.png";
 import ut1 from "../src/assets/UT1.png";
 import ut2 from "../src/assets/UT2.png";
+import overview from "../src/assets/category-2.svg";
+import task from "../src/assets/book.svg";
+import mentor from "../src/assets/user-octagon.svg";
+import message from "../src/assets/message.svg";
+import settings from "../src/assets/setting-2.svg";
+import taskdetail from "../src/assets/detailtask.png"
+
+export const SIDEBAR_NAV_ITEMS = [
+  {
+    icon: overview, 
+    label: "Overview",
+    path: "/",
+  },
+  {
+    icon: task, 
+    label: "Task",
+    path: "/task",
+  },
+  {
+    icon: mentor,
+    label: "Mentors",
+    path: "/mentor",
+  },
+  {
+    icon: message, 
+    label: "Message",
+    path: "/messages",
+  },
+  {
+    icon: settings, 
+    label: "Settings",
+    path: "/settings",
+  },
+];
+
+export const HELP_CENTER_CONTENT = {
+  title: "Help Center",
+  description: "Having Trouble in Learning. Please contact us for more questions.",
+  buttonText: "Go To Help Center",
+};
 
 export const daysOfWeek = ['S', 'M', 'T', 'W', 'T', 'F', 'S'];
 
@@ -125,3 +165,28 @@ export const chartData: DataPoint[] = [
 ];
 
 export const timeRanges = ["This Week", "This Month", "This Year"];
+
+// constants.ts
+
+export const ASSIGNMENT_DETAILS = {
+  title: "Creating Awesome Mobile Apps",
+  subtitle: "UI/UX Design · Apps Design",
+  description: `Follow the video tutorial above. Understand how to use each tool in the Figma application. Also learn how to make a good and correct design. Starting from spacing, typography, content, and many other design hierarchies. Then try to make it yourself with your imagination and inspiration.`,
+  studentsInvolved: 200,
+  duration: "1 Hour",
+  image: taskdetail,
+};
+
+export const ASSESSMENT_ESSENCE = [
+  "Understanding the tools in Figma",
+  "Understand the basics of making designs",
+  "Designing a mobile application using figma",
+  "Presenting the design flow",
+];
+
+export const STUDENT_DETAILS = {
+  name: "Dennis Nzioki",
+  class: "MIPA 2",
+  number: "10",
+  lastModified: "1 July 2022",
+};

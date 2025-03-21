@@ -5,6 +5,7 @@ import Task from "./pages/task/index";
 import Mentor from "./pages/mentor/index";
 import Settings from "./pages/settings/index";
 import Messages from "./pages/messages/index";
+import DetailTask from "./pages/task/components/DetailTask";
 
 const router = createBrowserRouter([
   {
@@ -30,6 +31,10 @@ const router = createBrowserRouter([
       {
         path: "messages",
         element: <Messages />,
+      },
+      {
+        path: "detailtask",
+        element: <DetailTask />,
       },
     ],
   },

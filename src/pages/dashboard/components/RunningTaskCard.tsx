@@ -4,7 +4,6 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 const RunningTaskCard: React.FC = () => {
   return (
     <>
-      {/* mobile version */}
       <Card className="md:hidden bg-black text-white w-[327px] h-[124px] rounded-[10px] flex flex-col self-center justify-between p-3">
         <CardHeader className="p-3 pb-0">
           <CardTitle className="font-semibold text-sm">Running Task</CardTitle>

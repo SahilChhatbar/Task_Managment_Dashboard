@@ -17,15 +17,17 @@ const Header: React.FC<HeaderProps> = ({ toggleSidebar }) => {
   const isMentorPage = location.pathname === "/mentor";
   const isSettingsPage = location.pathname === "/settings";
   const isMessagesPage = location.pathname === "/messages";
+  const isTaskDetailPage = location.pathname === "/detailtask";
+
 
   return (
     <header
       className={`p-7 md:w-full flex flex-col gap-4 ${
-        isTaskPage || isMentorPage || isSettingsPage || isMessagesPage ? "bg-white" : ""
+        isTaskPage || isMentorPage || isSettingsPage || isMessagesPage || isTaskDetailPage ? "bg-white" : ""
       }`}
     >
       <div className="flex items-center justify-between">
-        {isTaskPage || isMentorPage || isSettingsPage || isMessagesPage ? (
+        {isTaskPage || isMentorPage || isSettingsPage || isMessagesPage || isTaskDetailPage ? (
           <>
             <div className="md:hidden flex items-center gap-4">
               <Button
@@ -41,7 +43,8 @@ const Header: React.FC<HeaderProps> = ({ toggleSidebar }) => {
               {isTaskPage ? "Explore Task" : 
                isMentorPage ? "Explore Mentors" :
                isSettingsPage ? "Settings" :
-               isMessagesPage ? "Messages" : ""}
+               isTaskDetailPage? "Detail Task" :
+               isMessagesPage ? "Messages" : " "}
             </h1>
           </>
         ) : (

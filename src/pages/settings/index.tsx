@@ -16,19 +16,16 @@ import { Separator } from "@/components/ui/separator";
 interface SettingsProps {
   onSave?: () => void;
 }
-
 const Settings: React.FC<SettingsProps> = ({ onSave }) => {
   const [activeTab, setActiveTab] = useState("general");
   const [language, setLanguage] = useState("english");
   const [timezone, setTimezone] = useState("english");
   const [timeFormat, setTimeFormat] = useState("24");
-
   const handleSave = () => {
     if (onSave) {
       onSave();
     }
   };
-
   return (
     <div className="jakarta w-full p-7">
         <div className="block md:hidden text-start mb-4 text-2xl font-semibold text-[#141522]">

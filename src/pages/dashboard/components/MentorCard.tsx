@@ -15,7 +15,6 @@ interface ProfileCardProps {
   };
   avatarUrl: string;
 }
-
 const MentorCard: React.FC<ProfileCardProps> = ({
   name,
   designation,
@@ -28,7 +27,6 @@ const MentorCard: React.FC<ProfileCardProps> = ({
   const handleFollowClick = () => {
     setIsFollowing(!isFollowing);
   };
-
   return (
     <Card className="p-0 w-full bg-white rounded-xl border-none">
       <CardContent className="p-4 flex flex-col gap-3">
@@ -60,7 +58,7 @@ const MentorCard: React.FC<ProfileCardProps> = ({
             {description}
           </div>
         )}
-        
+  
         <div className="flex justify-between items-center">
           <div className="flex items-center gap-2">
             <MdArticle className="text-lg text-[#54577A]" />
