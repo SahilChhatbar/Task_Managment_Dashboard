@@ -28,8 +28,8 @@ const Settings: React.FC<SettingsProps> = ({ onSave }) => {
   };
   return (
     <div className="jakarta w-full p-7">
-        <div className="block md:hidden text-start mb-4 text-2xl font-semibold text-[#141522]">
-        Settings 
+      <div className="block md:hidden text-start mb-4 text-2xl font-semibold text-[#141522]">
+        Settings
       </div>
       <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
         <TabsList className="text-sm jakarta w-40  border-none bg-[#fafafa] flex gap-7">
@@ -145,12 +145,13 @@ const Settings: React.FC<SettingsProps> = ({ onSave }) => {
                 Mentor Help
               </Label>
               <div className="pt-10">
-              <Button
-                onClick={handleSave}
-                className="cursor-pointer h-11 sm:h-11 md:h-11 lg:h-11 w-64 md:54 self-center lg:54 sm:w-54 bg-[#546FFF] text-white font-semibold hover:bg-primary/90"
-              >
-                Save Changes
-              </Button></div>
+                <Button
+                  onClick={handleSave}
+                  className="cursor-pointer h-11 sm:h-11 md:h-11 lg:h-11 w-64 md:54 self-center lg:54 sm:w-54 bg-[#546FFF] text-white font-semibold hover:bg-primary/90"
+                >
+                  Save Changes
+                </Button>
+              </div>
             </div>
           </TabsList>
         </TabsContent>

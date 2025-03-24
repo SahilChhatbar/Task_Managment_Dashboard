@@ -4,7 +4,7 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 const RunningTaskCard: React.FC = () => {
   return (
     <>
-      <Card className="md:hidden bg-black text-white w-[327px] h-[124px] rounded-[10px] flex flex-col self-center justify-between p-3">
+      <Card className="md:hidden bg-black text-white w-full h-[124px] rounded-[10px] flex flex-col self-center justify-between p-3">
         <CardHeader className="p-3 pb-0">
           <CardTitle className="font-semibold text-sm">Running Task</CardTitle>
         </CardHeader>
@@ -48,7 +48,6 @@ const RunningTaskCard: React.FC = () => {
           </div>
         </CardContent>
       </Card>
-      {/* desktop version */}
       <Card className="hidden md:flex bg-black text-white w-full max-h-53.5 max-w-48.5 flex-col justify-between p-0">
         <CardHeader className="p-5 pb-0">
           <CardTitle className="font-semibold text-base">Running Task</CardTitle>

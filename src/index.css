@@ -2,7 +2,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
 
 
-
 .sidebar-label{
  font-size: 14px;
  font-weight: 600;
@@ -172,4 +171,13 @@
   .dark body {
     color: var(--text-dark); /* Add this line */
  }
+}
+@layer utilities {
+  .no-scrollbar::-webkit-scrollbar {
+      display: none;
+  }
+  .no-scrollbar {
+      -ms-overflow-style: none;  /* IE and Edge */
+      scrollbar-width: none;  /* Firefox */
+}
 }

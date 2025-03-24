@@ -1,11 +1,11 @@
 import george from "../src/assets/george.png";
 import licoln from "../src/assets/lincoln.png";
-import anna from "../src/assets/lincoln.png";
-import richard from "../src/assets/lincoln.png";
+import anna from "../src/assets/a.png";
+import richard from "../src/assets/r.png";
 import julia from "../src/assets/lincoln.png";
 import alex from "../src/assets/lincoln.png";
 import antoine from "../src/assets/lincoln.png";
-import jessica from "../src/assets/lincoln.png";
+import jessica from "../src/assets/j.png";
 import ut1 from "../src/assets/UT1.png";
 import ut2 from "../src/assets/UT2.png";
 import overview from "../src/assets/category-2.svg";
@@ -14,6 +14,13 @@ import mentor from "../src/assets/user-octagon.svg";
 import message from "../src/assets/message.svg";
 import settings from "../src/assets/setting-2.svg";
 import taskdetail from "../src/assets/detailtask.png"
+import jason from "../src/assets/jason.png";  
+import angel from "../src/assets/angel.png";  
+import angelie from "../src/assets/angelie.png";  
+import jakob from "../src/assets/jakob.png";  
+import jeremy from "../src/assets/jeremy.png";  
+import nadia from "../src/assets/nadia.png";  
+import emery from "../src/assets/emery.png";  
 
 export const SIDEBAR_NAV_ITEMS = [
   {
@@ -146,6 +153,11 @@ export const taskData = [
   { category: "UI/UX Design", title: "Creating Mobile App Design", daysLeft: 3, imageSrc: ut1, progressPercent: 75 },
   { category: "Web Developer", title: "Creating Perfect Website", daysLeft: 4, imageSrc: ut2, progressPercent: 85 },
   { category: "Web Developer", title: "Building Responsive Layout", daysLeft: 5, imageSrc: ut2, progressPercent: 60 },
+  { category: "Web Developer", title: "Building Responsive Layout", daysLeft: 5, imageSrc: ut2, progressPercent: 60 },
+  { category: "Mobile Development", title: "iOS App Development", daysLeft: 7, imageSrc: ut1, progressPercent: 45 },
+  { category: "UI/UX Design", title: "Design System Creation", daysLeft: 2, imageSrc: ut2, progressPercent: 90 },
+  { category: "Backend Development", title: "API Integration", daysLeft: 6, imageSrc: ut1, progressPercent: 30 },
+  { category: "DevOps", title: "CI/CD Pipeline Setup", daysLeft: 4, imageSrc: ut2, progressPercent: 65 },
 ];
 
 export interface DataPoint {
@@ -190,3 +202,81 @@ export const STUDENT_DETAILS = {
   number: "10",
   lastModified: "1 July 2022",
 };
+
+export const TASK_TITLE = "Creating Awesome Mobile Apps";
+export const TASK_SUBTITLE = "UI/UX Designer";
+export const PROGRESS_PERCENTAGE = 90;
+export const TIME_ESTIMATE = "1 Hour";
+
+export const DETAIL_TASKS = [
+  "Understanding the tools in Figma",
+  "Understand the basics of making designs",
+  "Design a mobile application with figma",
+];
+
+export const initialConversations = [
+  {
+    id: 1,
+    name: "Angelie Crison",
+    lastMessage: "Thank you very much. I'm glad...",
+    time: "1m Ago",
+    read: false,
+    avatar: angelie,
+  },
+  {
+    id: 2,
+    name: "Jakob Saris",
+    lastMessage: "You: Sure! let me tell you about w...",
+    time: "2m Ago",
+    read: true,
+    avatar: jakob,
+  },
+  {
+    id: 3,
+    name: "Emery Korsgard",
+    lastMessage: "Thank's. You are very helpful...",
+    time: "3m Ago",
+    read: false,
+    avatar: emery,
+  },
+  {
+    id: 4,
+    name: "Jeremy Zucker",
+    lastMessage: "You: Sure! let me teach you about ...",
+    time: "4m Ago",
+    read: true,
+    avatar: jeremy,
+  },
+  {
+    id: 5,
+    name: "Nadia Lauren",
+    lastMessage: "Is there anything I can help? Just ...",
+    time: "5m Ago",
+    read: false,
+    avatar: nadia,
+  },
+  {
+    id: 6,
+    name: "Jason Statham",
+    lastMessage: "You: Sure! let me share about...",
+    time: "6m Ago",
+    read: true,
+    avatar: jason,
+  },
+  {
+    id: 7,
+    name: "Angel Kimberly",
+    lastMessage: "Okay. I know very well about it...",
+    time: "7m Ago",
+    read: false,
+    avatar: angel,
+  },
+  {
+    id: 8,
+    name: "Jason Momoa",
+    lastMessage: "You: Sure! let me tell you about...",
+    time: "7m Ago",
+    read: true,
+    avatar: jason,
+  },
+];

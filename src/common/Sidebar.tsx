@@ -4,7 +4,7 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { X } from "lucide-react";
 import logo from "../assets/book-square.svg";
-import { SIDEBAR_NAV_ITEMS, HELP_CENTER_CONTENT } from "../constants"; // Import constants
+import { SIDEBAR_NAV_ITEMS, HELP_CENTER_CONTENT } from "../constants"; 
 
 interface SidebarItemProps {
   icon: string;
@@ -58,6 +58,7 @@ const SidebarItem: React.FC<SidebarItemProps> = ({
 };
 const Sidebar: React.FC<SidebarProps> = ({ isSidebarOpen, toggleSidebar }) => {
   const location = useLocation();
+  const isMessage = location.pathname === "/messages";
   const currentPath = location.pathname;
   const isActive = (path: string) => {
     if (path === "/") {
@@ -72,11 +73,11 @@ const Sidebar: React.FC<SidebarProps> = ({ isSidebarOpen, toggleSidebar }) => {
       } md:relative transition-all duration-300`}
     >
       <div
-        className={`w-full md:w-[252px] bg-[#FFFFFF] text-black h-full ${
+        className={`${isMessage ?"border-1":""} w-full md:w-[252px]  bg-[#FFFFFF] text-black h-full ${
           isSidebarOpen ? "flex flex-col" : "hidden md:flex md:flex-col"
         }`}
       >
-        <div className="p-3 flex justify-between items-center">
+        <div className="p-3 flex justify-between  items-center">
           <div
             className={`flex items-center gap-3 p-4 ${
               isSidebarOpen ? "flex" : "hidden md:flex"
