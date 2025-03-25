@@ -24,7 +24,7 @@ const Layout = () => {
                 isSidebarOpen={isSidebarOpen}
                 toggleSidebar={toggleSidebar}
               />
-              <div className=" bg-[#fafafa] h-[calc(100vh-64px)]">
+              <div className="bg-[#fafafa] h-[calc(100vh-64px)]">
                 <Outlet />
               </div>
             </div>

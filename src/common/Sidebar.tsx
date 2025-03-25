@@ -4,13 +4,14 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { X } from "lucide-react";
 import logo from "../assets/book-square.svg";
-import { SIDEBAR_NAV_ITEMS, HELP_CENTER_CONTENT } from "../constants"; 
+import { SIDEBAR_NAV_ITEMS, HELP_CENTER_CONTENT } from "../constants";
 
 interface SidebarItemProps {
   icon: string;
   label: string;
   active?: boolean;
   path: string;
+  alternativePaths?: string[];
 }
 interface SidebarProps {
   isSidebarOpen: boolean;
@@ -60,7 +61,10 @@ const Sidebar: React.FC<SidebarProps> = ({ isSidebarOpen, toggleSidebar }) => {
   const location = useLocation();
   const isMessage = location.pathname === "/messages";
   const currentPath = location.pathname;
-  const isActive = (path: string) => {
+  const isActive = (path: string, alternativePaths?: string[]) => {
+    if (alternativePaths?.includes(currentPath)) {
+      return true;
+    }
     if (path === "/") {
       return currentPath === path;
     }
@@ -73,7 +77,9 @@ const Sidebar: React.FC<SidebarProps> = ({ isSidebarOpen, toggleSidebar }) => {
       } md:relative transition-all duration-300`}
     >
       <div
-        className={`${isMessage ?"border-1":""} w-full md:w-[252px]  bg-[#FFFFFF] text-black h-full ${
+        className={`${
+          isMessage ? "border-1" : ""
+        } w-full md:w-[252px]  bg-[#FFFFFF] text-black h-full ${
           isSidebarOpen ? "flex flex-col" : "hidden md:flex md:flex-col"
         }`}
       >
@@ -106,8 +112,9 @@ const Sidebar: React.FC<SidebarProps> = ({ isSidebarOpen, toggleSidebar }) => {
                     key={item.label}
                     icon={item.icon}
                     label={item.label}
-                    active={isActive(item.path)}
+                    active={isActive(item.path, item.alternativePaths)}
                     path={item.path}
+                    alternativePaths={item.alternativePaths}
                   />
                 ))}
               </nav>

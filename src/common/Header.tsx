@@ -1,13 +1,13 @@
 import React from "react";
-import { Menu, Search, Filter } from "lucide-react";
+import { Menu, Search } from "lucide-react";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import profile from "../assets/Profil.png";
 import { useLocation, useNavigate } from "react-router-dom";
-import Notif from "../assets/notif.png"
-import category from "../assets/element-1.png"
-import sort from "../assets/sort.png"
+import Notif from "../assets/notif.png";
+import category from "../assets/element-1.png";
+import sort from "../assets/sort.png";
 
 interface HeaderProps {
   isSidebarOpen: boolean;
@@ -89,10 +89,10 @@ const Header: React.FC<HeaderProps> = ({ toggleSidebar }) => {
           <Button
             variant="ghost"
             size="icon"
-            className="cursor-pointer"
+            className="cursor-pointer relative w-10 h-10 rounded-full border-1 border-gray-200 flex items-center justify-center hover:border-gray-300"
             onClick={() => navigate("/messages")}
           >
-            <img src={Notif} className="w-6 h-6"/>
+            <img src={Notif} className="w-6 h-6" />
           </Button>
           <Avatar
             className="w-11 h-11 cursor-pointer"
@@ -106,25 +106,25 @@ const Header: React.FC<HeaderProps> = ({ toggleSidebar }) => {
       {(isTaskPage || isMentorPage) && (
         <div className="jakarta flex items-center justify-between">
           <div className="hidden md:flex items-center w-120 h-13 border rounded-lg px-4 bg-white">
-  <Input
-    placeholder={isTaskPage ? "Search Task" : "Search Mentors"}
-    className="flex-1 border-none shadow-none bg-white focus:bg-white [&_input]:bg-white"
-    style={{ background: 'white' }}
-  />
-  <Search />
-</div>
+            <Input
+              placeholder={isTaskPage ? "Search Task" : "Search Mentors"}
+              className="flex-1 border-none shadow-none bg-white focus:bg-white [&_input]:bg-white"
+              style={{ background: "white" }}
+            />
+            <Search />
+          </div>
           <div className="hidden md:flex text-xs text-[#141522] flex-row gap-6">
             <Button
               variant="ghost"
               className="cursor-pointer flex items-center border-1 gap-2 h-13 bg-white"
             >
-              <img src={category}/> Category
+              <img src={category} /> Category
             </Button>
             <Button
               variant="ghost"
               className="cursor-pointer flex items-center gap-2 h-13 border-1 bg-white"
             >
-              <img src={sort} /> Sort By :{ isTaskPage?"Deadline":"Popular"}
+              <img src={sort} /> Sort By :{isTaskPage ? "Deadline" : "Popular"}
             </Button>
           </div>
         </div>

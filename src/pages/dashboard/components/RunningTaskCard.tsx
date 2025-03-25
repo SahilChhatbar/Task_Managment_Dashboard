@@ -11,7 +11,7 @@ const RunningTaskCard: React.FC = () => {
         <CardContent className="p-3 pt-0 flex flex-col gap-2">
           <div className="flex items-center justify-between">
             <div className="flex flex-col">
-              <div className="text-xl font-semibold">65</div>
+              <div className="text-3xl font-semibold">65</div>
             </div>
           </div>
           <div className="relative w-full h-24">

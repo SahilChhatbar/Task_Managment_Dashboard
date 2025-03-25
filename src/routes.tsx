@@ -5,7 +5,7 @@ import Task from "./pages/task/index";
 import Mentor from "./pages/mentor/index";
 import Settings from "./pages/settings/index";
 import Messages from "./pages/messages/index";
-import DetailTask from "./pages/task/components/DetailTask";
+import DetailTask from "./pages/task detail/index";
 
 const router = createBrowserRouter([
   {

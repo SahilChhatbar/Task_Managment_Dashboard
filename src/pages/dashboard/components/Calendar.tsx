@@ -40,7 +40,7 @@ const Calendar: React.FC = () => {
           return (
             <div key={day} className="relative text-center text-sm font-semibold p-1">
               {isSelected(dayDate) && (
-                <div className="absolute inset-x-2 top-0 h-[4.25rem] w-10 bg-black rounded-full z-0"></div>
+                <div className="absolute inset-x-2 top-0 h-[4.25rem] md:w-[38.5px] bg-black rounded-full z-0"></div>
               )}
               <span className={`relative z-10 ${isSelected(dayDate) ? "text-white" : "text-[#141522]"}`}>
                 {day[0]}

@@ -19,7 +19,7 @@ const Dashboard = () => {
         <RunningTaskCard />
         <Activity />
       </div>
-      <div className="grid grid-cols-1 gap-8">
+      <div className="grid w-full grid-cols-1">
         <MentorCard 
           mentors={mentors} 
           slidesToShow={2} 

@@ -43,16 +43,16 @@ const TaskCard: React.FC<TaskData> = ({
   imageSrc,
 }) => {
   return (
-    <Card  className="p-0 w-full h-min bg-white rounded-xl shadow-none border-none pb-4">
-      <div className="w-full">
+    <Card  className="p-0 w-full h-min gap-0 bg-white rounded-xl shadow-none border-none pb-4">
+      <div className="p-5">
         <img
           src={imageSrc}
           alt={title}
-          className="w-full h-[110px] object-cover rounded-lg"
+          className="md:w-70 md:h-27 w-full rounded-lg"
         />
       </div>
-      <CardContent className="p-4 pt-0 pb-0 flex flex-col gap-5 flex-grow">
-        <div>
+      <CardContent className="p-5 pt-0 pb-0 flex flex-col gap-5 flex-grow">
+        <div className="flex flex-col gap-1">
           <h3 className="font-semibold text-base text-[#141522]">{title}</h3>
           <p className="text-xs font-medium text-[#54577A]">{category}</p>
         </div>
@@ -77,7 +77,7 @@ const TaskCard: React.FC<TaskData> = ({
           </div>
           <div className="flex -space-x-2">
             {teamMembers.map((member, index) => (
-              <Avatar key={index} className="w-6 h-6 border-2 border-white">
+              <Avatar key={index} className="w-6 h-6 cursor-pointer border-2 border-white">
                 <AvatarImage src={member.image} alt={member.name} />
                 <AvatarFallback>{member.name[0]}</AvatarFallback>
               </Avatar>
@@ -123,11 +123,12 @@ const TaskCardCarousel: React.FC<TaskCardCarouselProps> = ({
     emblaApi.on("select", onSelect);
     emblaApi.on("reInit", onSelect);
   }, [emblaApi, onSelect]);
+
   const getWidthClass = () => {
     if (slidesToShow === 4) {
-      return "md:w-1/4 w-full";
+      return "md:w-5/19 w-full";
     } else if (slidesToShow === 2) {
-      return "md:w-1/2 w-full";
+      return "md:w-11/23 w-full";
     }
     return "w-full";
   };
@@ -161,7 +162,7 @@ const TaskCardCarousel: React.FC<TaskCardCarouselProps> = ({
       </div>
       <div className="overflow-hidden" ref={emblaRef}>
         <div
-          className="flex"
+          className="flex gap-8"
           style={{
             display: "flex",
             backfaceVisibility: "hidden",

@@ -6,7 +6,7 @@ import { ListFilterIcon } from "lucide-react";
 
 const Mentor = () => {
   return (
-    <div className="jakarta grid grid-cols-1 gap-8 lg:p-0 md:p-0 sm:p-0 p-7">
+    <div className="jakarta grid grid-cols-1 gap-8 lg:p-7 md:p-7 sm:p-0 p-7">
       <div className="block flex-col md:hidden text-start text-2xl font-semibold text-[#141522]">
         <h2>Explore Task</h2>
         <div className="flex items-center justify-between flex-row">
@@ -24,8 +24,8 @@ const Mentor = () => {
           </div>
         </div>
       </div>
-      <div className="p-6 md:p-8 flex flex-col gap-8">
-        <div className="flex flex-col gap-8">
+      <div className="p-0 flex flex-col gap-8">
+        <div className="flex flex-col">
           <MentorCard 
             mentors={mentors} 
             slidesToShow={4}     
@@ -33,21 +33,21 @@ const Mentor = () => {
             showNavigation={true}
           />
         </div>
-        <div className="flex flex-col gap-8">
+        <div className="flex flex-col">
           <div>
             <h2 className="text-xl md:text-2xl font-semibold text-[#141522] ">
             Mentors
             </h2>
             <div className="flex flex-col gap-8">
               <MentorCard 
-                mentors={mentors.slice(0, 4)} 
+                mentors={mentors.slice(0, 3)} 
                 showDescription={true}
                 isPopular={true}
                 showNavigation={false}
                 title=""
               />
               <MentorCard 
-                mentors={mentors.slice(4, 8)} 
+                mentors={mentors.slice(3, 6)} 
                 showDescription={true}
                 isPopular={true}
                 showNavigation={false}

@@ -32,6 +32,7 @@ export const SIDEBAR_NAV_ITEMS = [
     icon: task, 
     label: "Task",
     path: "/task",
+    alternativePaths: ["/task", "/detailtask"] 
   },
   {
     icon: mentor,

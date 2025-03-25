@@ -72,9 +72,9 @@ const MentorCard: React.FC<MentorCardProps> = ({
   };
   const getWidthClass = () => {
     if (slidesToShow === 4) {
-      return "md:w-1/4 w-full";
+      return "md:w-5/19 w-full";
     } else if (slidesToShow === 2) {
-      return "md:w-1/2 w-full";
+      return "md:w-11/23 w-full";
     }
     return "md:w-1/4 w-full";
   };
@@ -87,13 +87,13 @@ const MentorCard: React.FC<MentorCardProps> = ({
             {title}
           </h2>
         </div>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-8">
           {mentors.map((mentor, index) => (
             <Card
               key={`${mentor.name}-${index}`}
-              className="p-0 w-full shadow-none h-full bg-white rounded-xl border-none"
+              className="p-0 md:w-89 w-full shadow-none h-min bg-white rounded-xl border-none"
             >
-              <CardContent className="p-4 flex flex-col gap-3">
+              <CardContent className="p-4 flex flex-col gap-4">
                 <div className="flex justify-between items-center">
                   <div className="flex items-center gap-3">
                     <img
@@ -123,7 +123,7 @@ const MentorCard: React.FC<MentorCardProps> = ({
                   </Button>
                 </div>
                 {showDescription && mentor.description && (
-                  <div className="text-sm text-[#54577A] line-clamp-2">
+                  <div className="text-sm text-[#54577A] leading-[200%] line-clamp-2">
                     {mentor.description}
                   </div>
                 )}
@@ -177,7 +177,7 @@ const MentorCard: React.FC<MentorCardProps> = ({
       </div>
       <div className="overflow-hidden" ref={emblaRef}>
         <div
-          className="flex"
+          className="flex gap-8"
           style={{
             display: "flex",
             backfaceVisibility: "hidden",
@@ -193,7 +193,7 @@ const MentorCard: React.FC<MentorCardProps> = ({
               }}
             >
               <Card className="p-0 w-full h-min bg-white rounded-xl shadow-none border-none">
-                <CardContent className="p-4 flex flex-col gap-3">
+                <CardContent className="p-4 flex flex-col gap-4">
                   <div className="flex justify-between items-center">
                     <div className="flex items-center gap-3">
                       <img

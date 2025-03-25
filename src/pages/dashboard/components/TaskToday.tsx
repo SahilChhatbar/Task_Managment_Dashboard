@@ -10,7 +10,6 @@ import {
   PROGRESS_PERCENTAGE,
   TIME_ESTIMATE,
   DETAIL_TASKS,
-  AVATAR_DATA,
 } from "../../../constants";
 import { useNavigate } from "react-router";
 import one from "../../../assets/1.png";
@@ -18,6 +17,7 @@ import two from "../../../assets/2.png";
 import three from "../../../assets/3.png";
 import four from "../../../assets/4.png";
 import five from "../../../assets/5.png";
+import { Separator } from "@/components/ui/separator";
 
 
 const TaskToday = () => {
@@ -60,12 +60,13 @@ const TaskToday = () => {
         </div>
         <div className="flex -space-x-2">
           {[one, two, three, four, five].map((avatar, i) => (
-            <Avatar key={i} className="h-6 w-6 border-2 border-white">
+            <Avatar key={i} className="h-6 w-6 border-2 cursor-pointer border-white">
               <img src={avatar} alt={`Avatar ${i + 1}`} className="w-full h-full object-cover" />
             </Avatar>
           ))}
         </div>
       </div>
+      <Separator orientation="horizontal" />
       <div className="w-full">
         <div className="flex justify-between pb-2">
           <h3 className="font-semibold">Detail Task</h3>
