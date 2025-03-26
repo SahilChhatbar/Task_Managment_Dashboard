@@ -46,10 +46,10 @@ const SidebarItem: React.FC<SidebarItemProps> = ({
       <span
         className={`pl-2 transition-colors duration-100 ${
           active
-            ? "text-black font-medium"
+            ? "text-black font-semibold"
             : isHovered
-            ? "text-[#141522]"
-            : "text-[#8E92BC]"
+            ? "text-[#141522] font-semibold"
+            : "text-[#8E92BC] font-semibold"
         }`}
       >
         {label}
@@ -83,14 +83,14 @@ const Sidebar: React.FC<SidebarProps> = ({ isSidebarOpen, toggleSidebar }) => {
           isSidebarOpen ? "flex flex-col" : "hidden md:flex md:flex-col"
         }`}
       >
-        <div className="p-3 flex justify-between  items-center">
+        <div className="p-3 flex justify-between items-center">
           <div
             className={`flex items-center gap-3 p-4 ${
               isSidebarOpen ? "flex" : "hidden md:flex"
             }`}
           >
             <img src={logo} className="w-[40px] h-[40px]" alt="DNX Logo" />
-            <h2 className="jakarta text-[32px] text-[#141522] font-semibold">
+            <h2 className="   text-[32px] text-[#141522] font-semibold">
               DNX
             </h2>
           </div>
@@ -127,15 +127,15 @@ const Sidebar: React.FC<SidebarProps> = ({ isSidebarOpen, toggleSidebar }) => {
                   </span>
                 </div>
                 <div className="text-center flex-1 pt-8">
-                  <h3 className="jakarta font-semibold text-base">
+                  <h3 className="   font-semibold text-base">
                     {HELP_CENTER_CONTENT.title}
                   </h3>
-                  <p className="jakarta text-xs p-3">
+                  <p className="   text-xs p-3">
                     {HELP_CENTER_CONTENT.description}
                   </p>
                 </div>
                 <div className="flex justify-center w-full">
-                  <Button className="jakarta cursor-pointer font-semibold bg-white text-[#141522] w-[75%] py-2 rounded-lg text-xs hover:bg-white hover:opacity-90">
+                  <Button className="   cursor-pointer font-semibold bg-white text-[#141522] w-[75%] py-2 rounded-lg text-xs hover:bg-white hover:opacity-90">
                     {HELP_CENTER_CONTENT.buttonText}
                   </Button>
                 </div>

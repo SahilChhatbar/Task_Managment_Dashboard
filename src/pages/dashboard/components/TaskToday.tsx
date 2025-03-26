@@ -23,7 +23,7 @@ import { Separator } from "@/components/ui/separator";
 const TaskToday = () => {
   const navigate = useNavigate();
   return (
-    <Card className="jakarta w-full shadow-none border-none p-6 flex flex-col gap-6">
+    <Card className="w-full shadow-none border-none p-6 flex flex-col gap-6">
       <div className="flex flex-col">
         <div className="flex flex-row justify-between">
           <h3 className="text-[#141522] text-sm font-semibold">Task Today</h3>

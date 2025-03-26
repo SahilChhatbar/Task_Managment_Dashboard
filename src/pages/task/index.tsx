@@ -6,7 +6,7 @@ import { TaskCardCarousel } from "../dashboard/components/TaskCard";
 
 const Task = () => {
   return (
-    <div className="jakarta grid grid-cols-1 gap-8 p-7">
+    <div className="grid grid-cols-1 gap-8 p-7">
       <div className="block flex-col md:hidden text-start mb-4 text-2xl font-semibold text-[#141522]">
         <h2>Explore Task</h2>
         <div className="flex items-center justify-between flex-row">

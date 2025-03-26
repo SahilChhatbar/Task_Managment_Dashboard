@@ -179,8 +179,6 @@ export const chartData: DataPoint[] = [
 
 export const timeRanges = ["This Week", "This Month", "This Year"];
 
-// constants.ts
-
 export const ASSIGNMENT_DETAILS = {
   title: "Creating Awesome Mobile Apps",
   subtitle: "UI/UX Design · Apps Design",
@@ -217,7 +215,7 @@ export const DETAIL_TASKS = [
 
 export const initialConversations = [
   {
-    id: 1,
+    id: "1",
     name: "Angelie Crison",
     lastMessage: "Thank you very much. I'm glad...",
     time: "1m Ago",
@@ -225,7 +223,7 @@ export const initialConversations = [
     avatar: angelie,
   },
   {
-    id: 2,
+    id: "2",
     name: "Jakob Saris",
     lastMessage: "You: Sure! let me tell you about w...",
     time: "2m Ago",
@@ -233,7 +231,7 @@ export const initialConversations = [
     avatar: jakob,
   },
   {
-    id: 3,
+    id: "3",
     name: "Emery Korsgard",
     lastMessage: "Thank's. You are very helpful...",
     time: "3m Ago",
@@ -241,7 +239,7 @@ export const initialConversations = [
     avatar: emery,
   },
   {
-    id: 4,
+    id: "4",
     name: "Jeremy Zucker",
     lastMessage: "You: Sure! let me teach you about ...",
     time: "4m Ago",
@@ -249,7 +247,7 @@ export const initialConversations = [
     avatar: jeremy,
   },
   {
-    id: 5,
+    id: "5",
     name: "Nadia Lauren",
     lastMessage: "Is there anything I can help? Just ...",
     time: "5m Ago",
@@ -257,7 +255,7 @@ export const initialConversations = [
     avatar: nadia,
   },
   {
-    id: 6,
+    id: "6",
     name: "Jason Statham",
     lastMessage: "You: Sure! let me share about...",
     time: "6m Ago",
@@ -265,7 +263,7 @@ export const initialConversations = [
     avatar: jason,
   },
   {
-    id: 7,
+    id: "7",
     name: "Angel Kimberly",
     lastMessage: "Okay. I know very well about it...",
     time: "7m Ago",
@@ -273,7 +271,7 @@ export const initialConversations = [
     avatar: angel,
   },
   {
-    id: 8,
+    id: "8",
     name: "Jason Momoa",
     lastMessage: "You: Sure! let me tell you about...",
     time: "7m Ago",
@@ -281,3 +279,22 @@ export const initialConversations = [
     avatar: jason,
   },
 ];
+
+export const AUTO_REPLIES = [
+  "I understand, let me help you with that.",
+  "Thanks for sharing! I'll look into it.",
+  "Got it! Is there anything else you need?",
+  "I'll get back to you on this shortly.",
+];
+
+export const INITIAL_CHAT_HISTORY = {
+  "1": [
+    {
+      id: "1",
+      content: "Hello! How can I help you today?",
+      sender: "other" as const,
+      timestamp: new Date().toISOString(),
+      type: "text" as const,
+    },
+  ],
+};

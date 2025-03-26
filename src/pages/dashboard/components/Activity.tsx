@@ -39,7 +39,7 @@ const Activity: React.FC = () => {
       const data = payload[0].payload as DataPoint;
       return (
         <div className="bg-[#141522] text-white px-3 py-1 rounded shadow">
-          <p className="font-medium font-[Plus_Jakarta_Sans] text-sm">
+          <p className="font-medium text-sm">
             {data.tasks} Task
           </p>
         </div>
@@ -50,7 +50,7 @@ const Activity: React.FC = () => {
   return (
     <Card className="p-4 w-full flex flex-col h-53.5 shadow-none border-none bg-[#F5F5F7] gap-4">
       <div className="flex justify-between items-center">
-        <h2 className="text-base font-[Plus_Jakarta_Sans] font-semibold text-[#141522]">
+        <h2 className="text-base font-semibold text-[#141522]">
           Activity
         </h2>
         <Select value={timeRange} onValueChange={setTimeRange}>

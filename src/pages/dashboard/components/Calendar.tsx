@@ -14,7 +14,7 @@ const Calendar: React.FC = () => {
     format(day, "yyyy-MM-dd") === format(selectedDate, "yyyy-MM-dd");
 
   return (
-    <div className="jakarta w-full max-w-md p-4 rounded-lg bg-white">
+    <div className="w-full max-w-md p-4 rounded-lg bg-white">
       <div className="flex justify-between items-center pb-4">
         <Button
           variant="ghost"
@@ -40,7 +40,7 @@ const Calendar: React.FC = () => {
           return (
             <div key={day} className="relative text-center text-sm font-semibold p-1">
               {isSelected(dayDate) && (
-                <div className="absolute inset-x-2 top-0 h-[4.25rem] md:w-[38.5px] bg-black rounded-full z-0"></div>
+                <div className="absolute inset-x-2 top-0 h-[4.173rem] md:w-[37.5px] bg-black rounded-full z-0"></div>
               )}
               <span className={`relative z-10 ${isSelected(dayDate) ? "text-white" : "text-[#141522]"}`}>
                 {day[0]}

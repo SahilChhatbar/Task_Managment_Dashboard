@@ -6,7 +6,7 @@ import { ListFilterIcon } from "lucide-react";
 
 const Mentor = () => {
   return (
-    <div className="jakarta grid grid-cols-1 gap-8 lg:p-7 md:p-7 sm:p-0 p-7">
+    <div className="grid grid-cols-1 gap-8 lg:p-7 md:p-7 sm:p-0 p-7">
       <div className="block flex-col md:hidden text-start text-2xl font-semibold text-[#141522]">
         <h2>Explore Task</h2>
         <div className="flex items-center justify-between flex-row">

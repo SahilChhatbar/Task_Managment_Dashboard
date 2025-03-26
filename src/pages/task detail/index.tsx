@@ -24,7 +24,7 @@ const DetailTask: React.FC<DetailTaskProps> = ({
   };
 
   return (
-    <div className="jakarta flex flex-col p-4 sm:p-6 w-full bg-gray-50 rounded-lg">
+    <div className="flex flex-col p-4 sm:p-6 w-full bg-gray-50 rounded-lg">
       <div className="block md:hidden text-start pb-4">
         <h2 className="text-xl font-semibold text-[#141522]">Detail Task</h2>
         <div className="flex items-center justify-between flex-row pt-2">

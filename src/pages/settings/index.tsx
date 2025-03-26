@@ -19,13 +19,13 @@ const Settings: React.FC<SettingsProps> = ({ onSave }) => {
   };
 
   return (
-    <div className="jakarta w-full p-7">
+    <div className="w-full p-7">
       <div className="block md:hidden text-start mb-4 text-2xl font-semibold text-[#141522]">
         Settings
       </div>
       <Card className="w-full shadow-none border-none lg:w-full lg:h-fit h-fit flex flex-col md:p-7">
         <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
-          <TabsList className="text-sm jakarta border-none bg-[#ffffff] flex gap-7">
+          <TabsList className="text-sm   border-none bg-[#ffffff] flex gap-7">
             <TabsTrigger
               value="general"
               className="relative cursor-pointer px-2 text-[#141522] py-2 rounded-none bg-transparent hover:bg-transparent data-[state=active]:text-[#546FFF] data-[state=active]:font-medium"
