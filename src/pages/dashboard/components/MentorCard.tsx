@@ -72,7 +72,7 @@ const MentorCard: React.FC<MentorCardProps> = ({
   };
   const getWidthClass = () => {
     if (slidesToShow === 4) {
-      return "md:w-5/19 w-full";
+      return "md:w-6/21 w-full";
     } else if (slidesToShow === 2) {
       return "md:w-11/23 w-full";
     }
@@ -91,7 +91,7 @@ const MentorCard: React.FC<MentorCardProps> = ({
           {mentors.map((mentor, index) => (
             <Card
               key={`${mentor.name}-${index}`}
-              className="p-0 md:w-89 w-full shadow-none h-min bg-white rounded-xl border-none"
+              className="p-0 md:w-89 w-full shadow-none h-min bg-white rounded-[10px] border-none"
             >
               <CardContent className="p-4 flex flex-col gap-4">
                 <div className="flex justify-between items-center">
@@ -192,7 +192,7 @@ const MentorCard: React.FC<MentorCardProps> = ({
                 paddingRight: index === mentors.length - 1 ? "0" : "1rem",
               }}
             >
-              <Card className="p-0 w-full h-min bg-white rounded-xl shadow-none border-none">
+              <Card className="p-0 w-full h-min bg-white rounded-[10px] shadow-none border-none">
                 <CardContent className="p-4 flex flex-col gap-4">
                   <div className="flex justify-between items-center">
                     <div className="flex items-center gap-3">

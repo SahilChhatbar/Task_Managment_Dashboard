@@ -48,7 +48,7 @@ const Activity: React.FC = () => {
     return null;
   };
   return (
-    <Card className="p-4 w-full flex flex-col h-53.5 shadow-none border-none bg-[#F5F5F7] gap-4">
+    <Card className="p-4 w-full rounded-[10px] flex flex-col h-53.5 shadow-none border-none bg-[#F5F5F7] gap-4">
       <div className="flex justify-between items-center">
         <h2 className="text-base font-semibold text-[#141522]">
           Activity
@@ -66,7 +66,7 @@ const Activity: React.FC = () => {
           </SelectContent>
         </Select>
       </div>
-      <div className="w-full bg-white p-1.5 rounded-lg h-48 ">
+      <div className="w-full bg-white p-2 rounded-lg h-48 ">
         <ResponsiveContainer width="100%" height="100%">
           <LineChart data={data}>
             <XAxis
@@ -77,7 +77,7 @@ const Activity: React.FC = () => {
             />
             <YAxis
               width={20}
-              domain={[0, 3]}
+              domain={[.5, 3]}
               ticks={[1, 2, 3]}
               axisLine={false}
               tickLine={false}

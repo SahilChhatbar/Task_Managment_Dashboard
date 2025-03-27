@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { format, addMonths, subMonths, startOfWeek, addDays } from "date-fns";
 import { daysOfWeek } from "@/constants";
 import { Button } from "@/components/ui/button";
-import { MdChevronLeft, MdChevronRight } from "react-icons/md";
+import { MdArrowBackIosNew, MdArrowForwardIos } from "react-icons/md";
 
 const Calendar: React.FC = () => {
   const [selectedDate, setSelectedDate] = useState(new Date());
@@ -14,7 +14,7 @@ const Calendar: React.FC = () => {
     format(day, "yyyy-MM-dd") === format(selectedDate, "yyyy-MM-dd");
 
   return (
-    <div className="w-full max-w-md p-4 rounded-lg bg-white">
+    <div className="w-full max-w-md p-4 rounded-[10px] bg-white">
       <div className="flex justify-between items-center pb-4">
         <Button
           variant="ghost"
@@ -22,7 +22,7 @@ const Calendar: React.FC = () => {
           onClick={handlePrevMonth} 
           className="cursor-pointer p-0 hover:bg-transparent"
         >
-          <MdChevronLeft className="w-5 h-5"/>
+          <MdArrowBackIosNew className="w-5 h-5"/>
         </Button>
         <h2 className="text-sm font-semibold text-[#141522]">{format(selectedDate, "MMMM yyyy")}</h2>
         <Button 
@@ -31,16 +31,16 @@ const Calendar: React.FC = () => {
           onClick={handleNextMonth} 
           className="cursor-pointer p-0 hover:bg-transparent"
         >
-          <MdChevronRight className="w-5 h-5"/>
+          <MdArrowForwardIos className="w-5 h-5"/>
         </Button>
       </div>
       <div className="grid grid-cols-7 gap-1">
         {daysOfWeek.map((day, i) => {
           const dayDate = addDays(startDate, i);
           return (
-            <div key={day} className="relative text-center text-sm font-semibold p-1">
+            <div key={day} className="relative text-center text-sm font-medium p-1">
               {isSelected(dayDate) && (
-                <div className="absolute inset-x-2 top-0 h-[4.173rem] md:w-[37.5px] bg-black rounded-full z-0"></div>
+                <div className="absolute inset-x-2 top-0 h-[4.22rem] md:w-[38px] bg-black rounded-full z-0"></div>
               )}
               <span className={`relative z-10 ${isSelected(dayDate) ? "text-white" : "text-[#141522]"}`}>
                 {day[0]}
@@ -58,8 +58,8 @@ const Calendar: React.FC = () => {
                 onClick={() => handleDateClick(day)}
                 className={`relative z-10 w-8 h-8 p-0 cursor-pointer rounded-full text-sm font-normal flex items-center justify-center ${
                   isSelected(day)
-                    ? "bg-[#546FFF] text-white"
-                    : "bg-transparent text-gray-700 hover:bg-gray-100"
+                    ? "bg-[#546FFF] text-[#f5f5f7] font-medium"
+                    : "bg-[#F5F5F7] text-[#141522] font-medium hover:bg-gray-100"
                 }`}
               >
                 {format(day, "d")}

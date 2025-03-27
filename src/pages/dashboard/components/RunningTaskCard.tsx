@@ -48,7 +48,7 @@ const RunningTaskCard: React.FC = () => {
           </div>
         </CardContent>
       </Card>
-      <Card className="hidden md:flex bg-black text-white w-full max-h-53.5 max-w-48.5 flex-col justify-between p-0">
+      <Card className="hidden md:flex bg-black text-white w-full max-h-53.5 rounded-[10px] max-w-48.5 flex-col justify-between p-0">
         <CardHeader className="p-5 pb-0">
           <CardTitle className="font-semibold text-base">Running Task</CardTitle>
         </CardHeader>

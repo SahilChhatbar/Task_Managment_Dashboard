@@ -23,7 +23,7 @@ import { Separator } from "@/components/ui/separator";
 const TaskToday = () => {
   const navigate = useNavigate();
   return (
-    <Card className="w-full shadow-none border-none p-6 flex flex-col gap-6">
+    <Card className="w-full shadow-none rounded-[10px] border-none p-6 flex flex-col gap-6">
       <div className="flex flex-col">
         <div className="flex flex-row justify-between">
           <h3 className="text-[#141522] text-sm font-semibold">Task Today</h3>
@@ -86,7 +86,7 @@ const TaskToday = () => {
           ))}
         </div>
       </div>
-      <Button onClick={()=>navigate("/detailtask")} className="w-full bg-[#546FFF] hover:bg-blue-600 font-semibold cursor-pointer text-white">
+      <Button onClick={()=>navigate("/detailtask")} className="w-full bg-[#546FFF] hover:bg-blue-600 font-semibold  h-11 cursor-pointer text-white">
         Go To Detail
       </Button>
     </Card>

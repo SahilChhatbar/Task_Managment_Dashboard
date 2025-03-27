@@ -20,8 +20,8 @@ const GeneralSettings = ({ onSave }: GeneralSettingsProps) => {
   const [timeFormat, setTimeFormat] = useState("24");
 
   return (
-    <div className="space-y-8">
-      <div className="space-y-4">
+    <div className="space-y-8 ">
+      <div className="space-y-4 rounded-[10px]">
         <Label className="block text-sm font-medium text-[#141522]">
           Language
         </Label>

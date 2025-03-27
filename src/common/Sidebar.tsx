@@ -29,12 +29,12 @@ const SidebarItem: React.FC<SidebarItemProps> = ({
     <Link
       to={path}
       className={`flex items-center px-2 py-3 pb-2 ${
-        active ? "bg-[#F5F5F7] text-black" : "hover:bg-[#f5f5f7]"
-      } w-full cursor-pointer rounded-lg`}
+        active ? "bg-[#F5F5F7] text-black items-center" : "hover:bg-[#f5f5f7]"
+      } w-full cursor-pointer rounded-lg items-center`}
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
     >
-      <div className="flex items-center justify-center w-6 h-6">
+      <div className="flex content-center justify-center w-6 h-6">
         <img
           src={icon}
           alt={label}

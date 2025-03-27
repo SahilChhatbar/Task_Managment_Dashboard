@@ -43,12 +43,12 @@ const TaskCard: React.FC<TaskData> = ({
   imageSrc,
 }) => {
   return (
-    <Card  className="p-0 w-full h-min gap-0 bg-white rounded-xl shadow-none border-none pb-4">
+    <Card  className="p-0 w-full h-min gap-0 bg-white rounded-[10px] shadow-none border-none pb-4">
       <div className="p-5">
         <img
           src={imageSrc}
           alt={title}
-          className="md:w-70 md:h-27 w-full rounded-lg"
+          className="md:w-70 md:h-27 w-full rounded-[10px]"
         />
       </div>
       <CardContent className="p-5 pt-0 pb-0 flex flex-col gap-5 flex-grow">
@@ -126,7 +126,7 @@ const TaskCardCarousel: React.FC<TaskCardCarouselProps> = ({
 
   const getWidthClass = () => {
     if (slidesToShow === 4) {
-      return "md:w-5/19 w-full";
+      return "md:w-6/21 w-full";
     } else if (slidesToShow === 2) {
       return "md:w-11/23 w-full";
     }

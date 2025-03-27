@@ -1,25 +1,37 @@
 import React, { useState } from "react";
 import { Card } from "@/components/ui/card";
+import { Input } from "@/components/ui/input";  
 import { Search } from "lucide-react";
 import { MdDoneAll } from "react-icons/md";
-import { initialConversations } from "@/constants";
 
-interface Conversation {
+type Message = {
+  id: string;
+  content: string;
+  sender: "user" | "other";
+  timestamp: string;
+  type: "text" | "image";
+  imageUrl?: string;
+};
+
+type Conversation = {
   id: string;
   name: string;
   avatar: string;
-  time: string;
   lastMessage: string;
+  time: string;
   read: boolean;
-}
+  messages: Message[];
+};
 
 interface ChatListProps {
   onSelectConversation: (conversation: Conversation) => void;
-  activeConversationId: string | number;
+  activeConversationId: string;
+  conversations: Conversation[];
 }
 const ChatList: React.FC<ChatListProps> = ({
   onSelectConversation,
   activeConversationId,
+  conversations: initialConversations,
 }) => {
   const [conversations, setConversations] = useState(initialConversations);
   const [searchTerm, setSearchTerm] = useState("");
@@ -51,19 +63,17 @@ const ChatList: React.FC<ChatListProps> = ({
             <span key={i}>{part}</span>
           )
         )}
-        
       </>
     );
   };
-
   return (
-    <Card className="jakarta flex flex-col w-full p-6 shadow-none border-1 rounded-none h-full">
+    <Card className="flex flex-col w-full p-6 shadow-none border-1 rounded-none h-full">
       <div className="sticky top-0 bg-white z-10">
         <div className="relative">
-          <input
+        <Input
             type="text"
             placeholder="Search Name"
-            className="w-full h-13 p-7 rounded-md border border-gray-200 text-sm focus:outline-none focus:ring-1 focus:ring-blue-500"
+            className="w-full h-13 p-7 rounded-md border border-gray-200 text-sm focus:outline-none shadow-none focus:ring-1 focus:ring-blue-500"
             value={searchTerm}
             onChange={handleSearchChange}
           />
