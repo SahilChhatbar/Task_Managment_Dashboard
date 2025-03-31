@@ -14,7 +14,7 @@ const Layout = () => {
     setIsSidebarOpen((prev) => !prev);
   };
   return (
-    <div className="flex h-screen bg-[#fafafa]">
+    <div className="flex h-screen bg-[#fafafa] no-scrollbar">
       <Sidebar isSidebarOpen={isSidebarOpen} toggleSidebar={toggleSidebar} />
       {isDashboard ? (
         <div className="flex flex-col flex-grow">

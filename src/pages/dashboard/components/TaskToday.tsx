@@ -26,13 +26,13 @@ const TaskToday = () => {
     <Card className="w-full shadow-none rounded-[10px] border-none p-6 flex flex-col gap-6">
       <div className="flex flex-col">
         <div className="flex flex-row justify-between">
-          <h3 className="text-[#141522] text-sm font-semibold">Task Today</h3>
+          <h3 className="text-[#141522] text-sm font-semibold pb-4">Task Today</h3>
           <Button
             variant="ghost"
             size="icon"
             className="cursor-pointer h-8 w-8 p-0"
           >
-            <MoreHorizontal />
+            <MoreHorizontal/>
           </Button>
         </div>
         <img src={tt} />
@@ -42,21 +42,22 @@ const TaskToday = () => {
           <h2 className="text-base font-semibold text-[#141522]">
             {TASK_TITLE}
           </h2>
-          <p className="text-xs text-[#54577A]">{TASK_SUBTITLE}</p>
+          <p className="text-xs font-medium text-[#54577A]">{TASK_SUBTITLE}</p>
         </div>
       </div>
-      <div className="w-full flex justify-between pb-2 text-base">
-        <span>Progress</span>
-        <span className="text-blue-500">{PROGRESS_PERCENTAGE}%</span>
+      <div className="flex flex-col gap-2">
+      <div className="w-full flex justify-between font-medium text-base">
+        <span className="text-[#141522] font-medium">Progress</span>
+        <span className="text-[#546FFF]">{PROGRESS_PERCENTAGE}%</span>
       </div>
       <Progress
         value={PROGRESS_PERCENTAGE}
         className="h-2 [&>div]:bg-[#546FFF] bg-[#BAC8FF]"
-      />
+      /></div>
       <div className="w-full flex justify-between items-center">
         <div className="flex text-base items-center gap-2">
-          <Clock className="h-5 w-5 text-[#54577A]" />
-          <span>{TIME_ESTIMATE}</span>
+          <Clock className="h-6 w-6 text-[#54577A]" />
+          <span className="font-medium text-[#141522]">{TIME_ESTIMATE}</span>
         </div>
         <div className="flex -space-x-2">
           {[one, two, three, four, five].map((avatar, i) => (
@@ -70,7 +71,7 @@ const TaskToday = () => {
       <div className="w-full">
         <div className="flex justify-between pb-2">
           <h3 className="font-semibold">Detail Task</h3>
-          <span className="text-sm text-gray-500">{TASK_SUBTITLE}</span>
+          <span className="text-sm font-medium text-[#54577A]">{TASK_SUBTITLE}</span>
         </div>
         <div className="space-y-2">
           {DETAIL_TASKS.map((task, i) => (

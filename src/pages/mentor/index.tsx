@@ -2,7 +2,7 @@ import { mentors } from "@/constants";
 import MentorCard from "../dashboard/components/MentorCard";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { ListFilterIcon } from "lucide-react";
+import sort from "../../assets/setting-4.png";
 
 const Mentor = () => {
   return (
@@ -18,8 +18,7 @@ const Mentor = () => {
             <Button
               variant="outline"
               className="cursor-pointer flex items-center gap-2 h-13 w-13 bg-white"
-            >
-              <ListFilterIcon className="w-5 h-5" />
+            ><img src={sort} /> 
             </Button>
           </div>
         </div>

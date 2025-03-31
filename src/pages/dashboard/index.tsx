@@ -6,7 +6,7 @@ import { TaskCardCarousel } from "./components/TaskCard";
 
 const Dashboard = () => {
   return (
-    <div className="flex flex-col gap-7 p-7">
+    <div className="flex flex-col gap-7 p-7 md:p-7 lg:p-7">
       <div className="block md:hidden text-start text-2xl font-semibold text-[#141522]">
         Hi, Dennis <br />
         Nzioki

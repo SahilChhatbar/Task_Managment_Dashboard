@@ -66,7 +66,7 @@ const Activity: React.FC = () => {
           </SelectContent>
         </Select>
       </div>
-      <div className="w-full bg-white p-2 rounded-lg h-48 ">
+      <div className="w-full bg-white h-full p-1 rounded-lg">
         <ResponsiveContainer width="100%" height="100%">
           <LineChart data={data}>
             <XAxis

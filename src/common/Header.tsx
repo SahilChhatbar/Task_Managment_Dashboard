@@ -24,13 +24,13 @@ const Header: React.FC<HeaderProps> = ({ toggleSidebar }) => {
 
   return (
     <header
-      className={`p-7 md:w-full flex flex-col gap-4 ${
+      className={`p-7 md:w-full flex flex-col gap-7 ${
         isTaskPage ||
         isMentorPage ||
         isSettingsPage ||
         isMessagesPage ||
         isTaskDetailPage
-          ? "bg-white"
+          ? "bg-white" + (isMessagesPage ? " border-l-1" : "")
           : ""
       }`}
     >
@@ -48,7 +48,9 @@ const Header: React.FC<HeaderProps> = ({ toggleSidebar }) => {
                 className="p-0"
                 onClick={toggleSidebar}
               >
-                <Menu className="w-6 h-6" />
+                <div className="border-1 rounded-full border-[#F5F5F7] p-[8px]">
+                  <Menu className="w-10 h-10 text-[#8E92BC]" />
+                </div>
               </Button>
             </div>
             <h1 className="hidden md:block text-2xl text-[rgb(20,21,34)] font-semibold">
@@ -73,7 +75,9 @@ const Header: React.FC<HeaderProps> = ({ toggleSidebar }) => {
               className="md:hidden p-0"
               onClick={toggleSidebar}
             >
-              <Menu className="w-6 h-6" />
+              <div className="border-1 rounded-full border-[#F5F5F7] p-[8px]">
+                <Menu className="w-10 h-10 text-[#8E92BC]" />
+              </div>
             </Button>
             <div className="hidden md:flex md:flex-col">
               <h1 className="text-2xl text-[#141522] font-semibold">
@@ -104,14 +108,14 @@ const Header: React.FC<HeaderProps> = ({ toggleSidebar }) => {
         </div>
       </div>
       {(isTaskPage || isMentorPage) && (
-        <div className="jakarta flex items-center justify-between">
+        <div className="flex items-center justify-between">
           <div className="hidden md:flex items-center w-120 h-13 border rounded-lg px-4 bg-white">
             <Input
               placeholder={isTaskPage ? "Search Task" : "Search Mentors"}
               className="flex-1 border-none shadow-none bg-white focus:bg-white [&_input]:bg-white"
               style={{ background: "white" }}
             />
-            <Search />
+            <Search className="text-[#9c9fc4]" size={20} />
           </div>
           <div className="hidden md:flex text-xs text-[#141522] flex-row gap-6">
             <Button

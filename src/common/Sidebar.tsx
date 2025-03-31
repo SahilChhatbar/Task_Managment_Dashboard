@@ -59,7 +59,6 @@ const SidebarItem: React.FC<SidebarItemProps> = ({
 };
 const Sidebar: React.FC<SidebarProps> = ({ isSidebarOpen, toggleSidebar }) => {
   const location = useLocation();
-  const isMessage = location.pathname === "/messages";
   const currentPath = location.pathname;
   const isActive = (path: string, alternativePaths?: string[]) => {
     if (alternativePaths?.includes(currentPath)) {
@@ -77,9 +76,8 @@ const Sidebar: React.FC<SidebarProps> = ({ isSidebarOpen, toggleSidebar }) => {
       } md:relative transition-all duration-300`}
     >
       <div
-        className={`${
-          isMessage ? "border-1" : ""
-        } w-full md:w-[252px]  bg-[#FFFFFF] text-black h-full ${
+        className={`
+         w-full md:w-[252px]  bg-[#FFFFFF] text-black h-full ${
           isSidebarOpen ? "flex flex-col" : "hidden md:flex md:flex-col"
         }`}
       >
@@ -90,9 +88,7 @@ const Sidebar: React.FC<SidebarProps> = ({ isSidebarOpen, toggleSidebar }) => {
             }`}
           >
             <img src={logo} className="w-[40px] h-[40px]" alt="DNX Logo" />
-            <h2 className="   text-[32px] text-[#141522] font-semibold">
-              DNX
-            </h2>
+            <h2 className="text-[32px] text-[#141522] font-semibold">DNX</h2>
           </div>
           <Button
             variant="ghost"
@@ -106,12 +102,13 @@ const Sidebar: React.FC<SidebarProps> = ({ isSidebarOpen, toggleSidebar }) => {
         <div className="flex flex-col flex-1 overflow-hidden">
           <div className="flex flex-col flex-1 justify-between">
             <div className="flex justify-center">
-              <nav className="flex flex-col gap-6 w-[75%]">
+              <nav className="flex flex-col gap-6 w-[75%]" onClick={toggleSidebar}>
                 {SIDEBAR_NAV_ITEMS.map((item) => (
                   <SidebarItem
                     key={item.label}
                     icon={item.icon}
                     label={item.label}
+                    
                     active={isActive(item.path, item.alternativePaths)}
                     path={item.path}
                     alternativePaths={item.alternativePaths}
@@ -120,8 +117,8 @@ const Sidebar: React.FC<SidebarProps> = ({ isSidebarOpen, toggleSidebar }) => {
               </nav>
             </div>
             <div className="p-3 flex justify-center">
-              <Card className="bg-[#141522] text-white rounded-xl relative w-[188px] h-[248px] flex flex-col items-center">
-                <div className="bg-[#f5f5f5] rounded-full w-12 h-12 flex items-center justify-center absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-6 shadow-lg">
+              <Card className="bg-[#141522] text-white rounded-[10px] relative w-[188px] h-[248px] flex flex-col items-center">
+                <div className="bg-[#f5f5f5] rounded-full w-12 h-12 flex items-center justify-center absolute top-0 left-1/2 transform -translate-x-1/2 -translate-y-6 shadow-4xl">
                   <span className="text-2xl bg-[#141522] font-bold w-9 h-9 rounded-full text-white flex items-center justify-center">
                     ?
                   </span>
@@ -130,12 +127,12 @@ const Sidebar: React.FC<SidebarProps> = ({ isSidebarOpen, toggleSidebar }) => {
                   <h3 className="   font-semibold text-base">
                     {HELP_CENTER_CONTENT.title}
                   </h3>
-                  <p className="   text-xs p-3">
+                  <p className="text-xs p-3">
                     {HELP_CENTER_CONTENT.description}
                   </p>
                 </div>
                 <div className="flex justify-center w-full">
-                  <Button className="   cursor-pointer font-semibold bg-white text-[#141522] w-[75%] py-2 rounded-lg text-xs hover:bg-white hover:opacity-90">
+                  <Button className="cursor-pointer font-semibold bg-white text-[#141522] w-[75%] py-2 rounded-lg text-xs hover:bg-white hover:opacity-90">
                     {HELP_CENTER_CONTENT.buttonText}
                   </Button>
                 </div>

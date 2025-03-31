@@ -2,13 +2,14 @@ import React, { useState, useEffect, useCallback } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
 import { Clock } from "lucide-react";
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Avatar } from "@/components/ui/avatar";
 import useEmblaCarousel from "embla-carousel-react";
 import { Button } from "@/components/ui/button";
 import one from "../../../assets/1.png";
 import two from "../../../assets/2.png";
 import three from "../../../assets/3.png";
 import four from "../../../assets/4.png";
+import five from "../../../assets/5.png";
 import { MdArrowBackIosNew } from "react-icons/md";
 import { MdArrowForwardIos } from "react-icons/md";
 
@@ -34,16 +35,10 @@ const TaskCard: React.FC<TaskData> = ({
   category,
   progressPercent,
   daysLeft,
-  teamMembers = [
-    { name: "Person 1", image: one},
-    { name: "Person 2", image: two},
-    { name: "Person 3", image: three},
-    { name: "Person 4", image: four},
-  ],
   imageSrc,
 }) => {
   return (
-    <Card  className="p-0 w-full h-min gap-0 bg-white rounded-[10px] shadow-none border-none pb-4">
+    <Card className="p-0 w-full h-min gap-0 bg-white rounded-[10px] shadow-none border-none pb-4">
       <div className="p-5">
         <img
           src={imageSrc}
@@ -53,7 +48,7 @@ const TaskCard: React.FC<TaskData> = ({
       </div>
       <CardContent className="p-5 pt-0 pb-0 flex flex-col gap-5 flex-grow">
         <div className="flex flex-col gap-1">
-          <h3 className="font-semibold text-base text-[#141522]">{title}</h3>
+          <h3 className="font-semibold text-base text-[#141522]" >{title}</h3>
           <p className="text-xs font-medium text-[#54577A]">{category}</p>
         </div>
         <div className="flex flex-col gap-2">
@@ -71,18 +66,17 @@ const TaskCard: React.FC<TaskData> = ({
         <div className="flex justify-between items-center pb-0">
           <div className="flex items-center gap-2">
             <Clock className="w-5 h-5 text-[#54577A]" />
-            <span className="text-base text-[#141522]">
+            <span className="text-base font-medium text-[#141522]">
               {daysLeft} Days Left
             </span>
           </div>
           <div className="flex -space-x-2">
-            {teamMembers.map((member, index) => (
-              <Avatar key={index} className="w-6 h-6 cursor-pointer border-2 border-white">
-                <AvatarImage src={member.image} alt={member.name} />
-                <AvatarFallback>{member.name[0]}</AvatarFallback>
-              </Avatar>
-            ))}
-          </div>
+          {[one, two, three, four, five].map((avatar, i) => (
+            <Avatar key={i} className="h-6 w-6 border-2 cursor-pointer border-white">
+              <img src={avatar} alt={`Ava tar ${i + 1}`} className="w-full h-full object-cover" />
+            </Avatar>
+          ))}
+        </div>
         </div>
       </CardContent>
     </Card>

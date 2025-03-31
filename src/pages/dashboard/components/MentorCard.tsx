@@ -12,7 +12,7 @@ interface MentorData {
   designation: string;
   tasks: number;
   reviews: {
-    rating: number;
+    rating: number | string;
     count: number;
   };
   description?: string;
@@ -130,13 +130,13 @@ const MentorCard: React.FC<MentorCardProps> = ({
                 <div className="flex justify-between items-center">
                   <div className="flex items-center gap-2">
                     <img src={note}/>
-                    <span className="text-sm text-[#141522]">
+                    <span className="text-sm font-medium text-[#141522]">
                       {mentor.tasks} Task
                     </span>
                   </div>
                   <div className="flex items-center gap-2">
                     <FaStar className="text-lg text-[#FFB054]" />
-                    <span className="text-sm text-[#141522]">
+                    <span className="text-sm font-medium text-[#141522]">
                       {mentor.reviews.rating} ({mentor.reviews.count} Reviews)
                     </span>
                   </div>
@@ -232,13 +232,13 @@ const MentorCard: React.FC<MentorCardProps> = ({
                   <div className="flex justify-between items-center">
                     <div className="flex items-center gap-2">
                     <img src={note}/>
-                      <span className="text-sm text-[#141522]">
+                      <span className="text-sm font-medium text-[#141522]">
                         {mentor.tasks} Task
                       </span>
                     </div>
                     <div className="flex items-center gap-2">
                       <FaStar className="text-lg text-[#FFB054]" />
-                      <span className="text-sm text-[#141522]">
+                      <span className="text-sm font-medium text-[#141522]">
                         {mentor.reviews.rating} ({mentor.reviews.count} Reviews)
                       </span>
                     </div>

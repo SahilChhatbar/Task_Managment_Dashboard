@@ -22,11 +22,11 @@ const GeneralSettings = ({ onSave }: GeneralSettingsProps) => {
   return (
     <div className="space-y-8 ">
       <div className="space-y-4 rounded-[10px]">
-        <Label className="block text-sm font-medium text-[#141522]">
+        <Label className="block text-sm font-medium text-[#141522] ">
           Language
         </Label>
         <Select value={language} onValueChange={setLanguage}>
-          <SelectTrigger className="w-100 cursor-pointer">
+          <SelectTrigger className="w-115 cursor-pointer">
             <SelectValue placeholder="English (Default)" />
           </SelectTrigger>
           <SelectContent>
@@ -41,8 +41,8 @@ const GeneralSettings = ({ onSave }: GeneralSettingsProps) => {
         <Label className="block text-sm font-medium text-[#141522]">
           Timezone
         </Label>
-        <Select value={timezone} onValueChange={setTimezone} >
-          <SelectTrigger className="w-100 cursor-pointer">
+        <Select value={timezone} onValueChange={setTimezone}>
+          <SelectTrigger className="w-115 cursor-pointer">
             <SelectValue placeholder="English (Default)" />
           </SelectTrigger>
           <SelectContent>
@@ -61,18 +61,18 @@ const GeneralSettings = ({ onSave }: GeneralSettingsProps) => {
         <RadioGroup
           value={timeFormat}
           onValueChange={setTimeFormat}
-          className="flex flex-col sm:flex-row sm:space-x-4"
+          className="flex flex-row sm:space-x-4"
         >
-          <div className="flex items-center space-x-2 p-4 rounded-lg border border-input bg-background">
-            <RadioGroupItem value="24" id="24hours" />
-            <Label htmlFor="24hours" className="font-medium cursor-pointer">
+          <div className="flex items-center w-30 md:w-fit space-x-2 p-4 rounded-lg border border-input bg-background">
+            <Label htmlFor="24hours" className="font-medium cursor-pointer justify-between md:w-46">
               24 Hours
+              <RadioGroupItem value="24" id="24hours" />
             </Label>
           </div>
-          <div className="flex items-center space-x-2 p-4 rounded-lg border border-input bg-background">
-            <RadioGroupItem value="12" id="12hours" />
-            <Label htmlFor="12hours" className="font-medium cursor-pointer">
+          <div className="flex items-center space-x-2 p-4 rounded-lg border w-30 md:w-fit border-input bg-background">
+            <Label htmlFor="12hours" className="font-medium justify-between md:w-46 cursor-pointer">
               12 Hours
+              <RadioGroupItem value="12" id="12hours" />
             </Label>
           </div>
         </RadioGroup>

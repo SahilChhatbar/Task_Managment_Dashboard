@@ -31,7 +31,7 @@ const Messages = () => {
       read: conv.read ?? true,
       messages: [
         {
-          id: "initial-msg",
+          id: "+new Date()",
           content: "Hi there! Is there anything I can help you with?",
           sender: "other",
           timestamp: new Date().toISOString(),
@@ -45,7 +45,6 @@ const Messages = () => {
   const [isMobileView, setIsMobileView] = useState(false);
   const [showChat, setShowChat] = useState(false);
 
-
   useEffect(() => {
     const handleResize = () => {
       setIsMobileView(window.innerWidth < 1000);
@@ -54,6 +53,19 @@ const Messages = () => {
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
+
+  // Effect to control body scrolling when chat modal is open on mobile
+  useEffect(() => {
+    if (isMobileView && showChat) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [isMobileView, showChat]);
 
   const handleSelectConversation = (convo: Conversation) => {
     setActiveConversation(convo);
@@ -82,6 +94,7 @@ const Messages = () => {
 
   return (
     <div className="flex flex-row h-screen overflow-hidden bg-[#f5f5f7]">
+      {/* Chat List */}
       <div
         className={`${isMobileView ? "w-full" : "w-1/3"} ${
           isMobileView && showChat ? "hidden" : "block"
@@ -93,17 +106,27 @@ const Messages = () => {
           conversations={conversations}
         />
       </div>
-      <div
-        className={`${isMobileView ? "w-full" : "w-2/3"} ${
-          isMobileView && !showChat ? "hidden" : "block"
-        }`}
-      >
-        <ChatInterface
-          activeConversation={activeConversation}
-          onUpdateConversations={handleUpdateConversations}
-          onBack={isMobileView ? handleBackToList : undefined}
-        />
-      </div>
+      
+      {/* Desktop Chat Interface */}
+      {!isMobileView && (
+        <div className="w-2/3">
+          <ChatInterface
+            activeConversation={activeConversation}
+            onUpdateConversations={handleUpdateConversations}
+          />
+        </div>
+      )}
+      
+      {/* Mobile Chat Modal */}
+      {isMobileView && showChat && (
+        <div className="fixed inset-0 z-50 flex flex-col bg-white">
+          <ChatInterface
+            activeConversation={activeConversation}
+            onUpdateConversations={handleUpdateConversations}
+            onBack={handleBackToList}
+          />
+        </div>
+      )}
     </div>
   );
 };

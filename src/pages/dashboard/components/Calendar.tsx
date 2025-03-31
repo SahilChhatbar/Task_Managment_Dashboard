@@ -40,7 +40,7 @@ const Calendar: React.FC = () => {
           return (
             <div key={day} className="relative text-center text-sm font-medium p-1">
               {isSelected(dayDate) && (
-                <div className="absolute inset-x-2 top-0 h-[4.22rem] md:w-[38px] bg-black rounded-full z-0"></div>
+                <div className="absolute inset-x-2 top-0 h-[4.1rem] md:w-[39px] bg-black rounded-full z-0"></div>
               )}
               <span className={`relative z-10 ${isSelected(dayDate) ? "text-white" : "text-[#141522]"}`}>
                 {day[0]}
@@ -58,7 +58,7 @@ const Calendar: React.FC = () => {
                 onClick={() => handleDateClick(day)}
                 className={`relative z-10 w-8 h-8 p-0 cursor-pointer rounded-full text-sm font-normal flex items-center justify-center ${
                   isSelected(day)
-                    ? "bg-[#546FFF] text-[#f5f5f7] font-medium"
+                    ? "bg-[#546FFF] text-[#f5f5f7] w-7 h-7 font-medium"
                     : "bg-[#F5F5F7] text-[#141522] font-medium hover:bg-gray-100"
                 }`}
               >

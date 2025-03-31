@@ -2,9 +2,6 @@ import george from "../src/assets/george.png";
 import licoln from "../src/assets/lincoln.png";
 import anna from "../src/assets/a.png";
 import richard from "../src/assets/r.png";
-import julia from "../src/assets/lincoln.png";
-import alex from "../src/assets/lincoln.png";
-import antoine from "../src/assets/lincoln.png";
 import jessica from "../src/assets/j.png";
 import ut1 from "../src/assets/UT1.png";
 import ut2 from "../src/assets/UT2.png";
@@ -66,7 +63,7 @@ export const mentors = [
     designation: "Web Developer",
     tasks: 40,
     reviews: {
-      rating: 4.7,
+      rating: "4,7",
       count: 750,
     },
     description: "Hi, I'm Jessica Jane. I am a doctoral student at Harvard University majoring in Web Development with 5+ years of industry experience."
@@ -77,7 +74,7 @@ export const mentors = [
     designation: "3D Design",
     tasks: 32,
     reviews: {
-      rating: 4.9,
+      rating: "4,9",
       count: 510,
     },
     description: "Hi, I'm Abraham Lincoln. I am a professional 3D Designer at Blender company with expertise in modeling and animation."
@@ -88,29 +85,29 @@ export const mentors = [
     designation: "UI UX Design",
     tasks: 40,
     reviews: {
-      rating: 4.7,
+      rating: "4,7",
       count: 750,
     },
     description: "Hi, I'm Curious George. I am a UI/UX Designer with expertise in creating user-centered digital experiences."
   },
   {
-    avatarUrl: alex,
+    avatarUrl: licoln,
     name: "Alex Stanton",
     designation: "UI Designer",
     tasks: 60,
     reviews: {
-      rating: 4.9,
+      rating: "4,9",
       count: 970,
     },
     description: "Hi, I'm Alex Stanton. I am a doctoral student at Oxford University majoring in UI / UX Design with 3+ years of industry experience."
   },
   {
-    avatarUrl: antoine,
+    avatarUrl: licoln,
     name: "Antoine Griezmann",
     designation: "Android Developer",
     tasks: 50,
     reviews: {
-      rating: 4.8,
+      rating: "4,8",
       count: 830,
     },
     description: "Hi, I'm Antoine Griezmann. I'm an Android Developer at Google company with expertise in Kotlin and Java."
@@ -121,7 +118,7 @@ export const mentors = [
     designation: "3D Design",
     tasks: 40,
     reviews: {
-      rating: 4.8,
+      rating: "4,8",
       count: 870,
     },
     description: "Hi, I'm Anna White. I'm a professional 3D Designer at Blender company with expertise in character modeling."
@@ -132,18 +129,18 @@ export const mentors = [
     designation: "2D Design",
     tasks: 60,
     reviews: {
-      rating: 4.7,
+      rating: "4,7",
       count: 730,
     },
     description: "Hi, I'm Richard Kyle. I'm a professional 2D Designer at Photoshop company with expertise in illustration."
   },
   {
-    avatarUrl: julia,
+    avatarUrl: licoln,
     name: "Julia Philips",
     designation: "UI Designer",
     tasks: 50,
     reviews: {
-      rating: 4.9,
+      rating: "4,9",
       count: 910,
     },
     description: "Hi, I'm Julia Philips. I'm a senior manager at Apple company with expertise in user interface design."
@@ -152,9 +149,9 @@ export const mentors = [
 
 export const taskData = [
   { category: "UI/UX Design", title: "Creating Mobile App Design", daysLeft: 3, imageSrc: ut1, progressPercent: 75 },
-  { category: "Web Developer", title: "Creating Perfect Website", daysLeft: 4, imageSrc: ut2, progressPercent: 85 },
-  { category: "Web Developer", title: "Building Responsive Layout", daysLeft: 5, imageSrc: ut2, progressPercent: 60 },
-  { category: "Web Developer", title: "Building Responsive Layout", daysLeft: 5, imageSrc: ut2, progressPercent: 60 },
+  { category: "IOS Developer", title: "Creating Perfect IOS Apps", daysLeft: 4, imageSrc: ut2, progressPercent: 85 },
+  { category: "Web Developer", title: "Building Responsive Layout", daysLeft: 2, imageSrc: ut2, progressPercent: 90 },
+  { category: "ML Engineer", title: "Building and Training ML Model", daysLeft: 5, imageSrc: ut2, progressPercent: 60 },
   { category: "Mobile Development", title: "iOS App Development", daysLeft: 7, imageSrc: ut1, progressPercent: 45 },
   { category: "UI/UX Design", title: "Design System Creation", daysLeft: 2, imageSrc: ut2, progressPercent: 90 },
   { category: "Backend Development", title: "API Integration", daysLeft: 6, imageSrc: ut1, progressPercent: 30 },
@@ -169,12 +166,12 @@ export interface DataPoint {
 
 export const chartData: DataPoint[] = [
   { day: "S", value: 1 },
-  { day: "M", value: 2, tasks: 2 },
+  { day: "M", value: 1.7, tasks: 2 },
   { day: "T", value: 1 },
-  { day: "W", value: 1 },
-  { day: "T", value: 2 },
+  { day: "W", value: 2 },
+  { day: "T", value: 1 },
   { day: "F", value: 1.8 },
-  { day: "S", value: 1.7 },
+  { day: "S", value: 1.4, tasks: 1 },
 ];
 
 export const timeRanges = ["This Week", "This Month", "This Year"];
@@ -225,7 +222,7 @@ export const initialConversations = [
   {
     id: "2",
     name: "Jakob Saris",
-    lastMessage: "You: Sure! let me tell you about w...",
+    lastMessage: "Sure! let me tell you about...",
     time: "2m Ago",
     read: true,
     avatar: jakob,
@@ -241,7 +238,7 @@ export const initialConversations = [
   {
     id: "4",
     name: "Jeremy Zucker",
-    lastMessage: "You: Sure! let me teach you about ...",
+    lastMessage: "Sure! let me teach you about...",
     time: "4m Ago",
     read: true,
     avatar: jeremy,
@@ -249,7 +246,7 @@ export const initialConversations = [
   {
     id: "5",
     name: "Nadia Lauren",
-    lastMessage: "Is there anything I can help? Just ...",
+    lastMessage: "Is there anything I can help? Just...",
     time: "5m Ago",
     read: false,
     avatar: nadia,
@@ -257,7 +254,7 @@ export const initialConversations = [
   {
     id: "6",
     name: "Jason Statham",
-    lastMessage: "You: Sure! let me share about...",
+    lastMessage: "Sure! let me share about...",
     time: "6m Ago",
     read: true,
     avatar: jason,
@@ -273,18 +270,11 @@ export const initialConversations = [
   {
     id: "8",
     name: "Jason Momoa",
-    lastMessage: "You: Sure! let me tell you about...",
+    lastMessage: "Sure! let me tell you about...",
     time: "7m Ago",
     read: true,
     avatar: jason,
   },
-];
-
-export const AUTO_REPLIES = [
-  "I understand, let me help you with that.",
-  "Thanks for sharing! I'll look into it.",
-  "Got it! Is there anything else you need?",
-  "I'll get back to you on this shortly.",
 ];
 
 export const INITIAL_CHAT_HISTORY = {
